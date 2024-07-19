@@ -2,9 +2,12 @@
   "name": "react-nextjs-toast-notify",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && rollup -c"
   },
   "keywords": [],
   "author": "urian viera",
@@ -13,5 +16,8 @@
     "@vitejs/plugin-react": "^4.3.1",
     "typescript": "^5.5.3",
     "vite": "^5.3.4"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "^4.0.0-beta.1"
   }
 }

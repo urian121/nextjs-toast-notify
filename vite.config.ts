@@ -1,24 +1,24 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import dts from "vite-plugin-dts";
 
 export default defineConfig({
-  plugins: [react()],
   build: {
     lib: {
-      entry: "src/main.tsx",
-      name: "ReactNextjsToastNotify",
-      formats: ["es", "umd"],
-      fileName: (format) => `react-nextjs-toast-notify.${format}.js`,
+      entry: "src/index.ts",
+      name: "react-nextjs-toast-notify",
+      formats: ["es"],
+      fileName: "index",
     },
     rollupOptions: {
-      // Configura dependencias externas y globals
-      external: ["react", "react-dom"],
       output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
+        format: "es",
+        entryFileNames: "index.js",
       },
     },
   },
+  plugins: [
+    dts({
+      outDir: "dist",
+    }),
+  ],
 });
