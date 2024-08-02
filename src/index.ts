@@ -1,14 +1,27 @@
 import "./styles/toast.css";
 import { ToastProps } from "./interfaces/index";
 
+const createToastContainer = (): HTMLElement => {
+  const container = document.createElement('div');
+  container.className = 'toast-container';
+  document.body.appendChild(container);
+  return container;
+};
+
+const removeToastContainerIfEmpty = () => {
+  const toastContainer = document.querySelector('.toast-container') as HTMLElement;
+  if (toastContainer && !toastContainer.querySelector('.toast')) {
+    toastContainer.remove();
+  }
+};
+
+const getToastContainer = (): HTMLElement => {
+  return document.querySelector('.toast-container') || createToastContainer();
+};
+
 const showToast = (props: ToastProps) => {
   const { message, duration = 5000 } = props;
-  const toastContainer = document.querySelector(".toast-container") as HTMLElement;
-
-  if (!toastContainer) {
-    console.error("No toast container found");
-    return;
-  }
+  const toastContainer = getToastContainer();
 
   const toast = document.createElement("div");
   toast.classList.add("toast");
@@ -19,11 +32,16 @@ const showToast = (props: ToastProps) => {
         <span class="text text-2">${message}</span>
       </div>
     </div>
-    <i class="close" onclick="closeToast(this.parentElement)"></i>
+    <i class="close"></i>
     <div class="progress"></div>
   `;
 
+  // Add toast to container
   toastContainer.appendChild(toast);
+
+  // Add event listener to close button
+  const closeButton = toast.querySelector(".close") as HTMLElement;
+  closeButton.addEventListener('click', () => closeToast(toast));
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -46,6 +64,7 @@ const closeToast = (toast: HTMLElement) => {
 
   setTimeout(() => {
     toast.remove();
+    removeToastContainerIfEmpty();
   }, 500);
 };
 
