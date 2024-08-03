@@ -5,15 +5,7 @@
   gap: 10px;
   pointer-events: none;
 }
-/*.toast-container {
-  position: fixed;
-  display: flex;
-  top: 25px;
-  right: 30px;
-  flex-direction: column;
-  gap: 10px;
-  pointer-events: none;
-}*/
+
 .toast-container.top-left {
   top: 25px;
   left: 30px;
@@ -58,14 +50,17 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: all;
 }
+
 .toast.active {
   opacity: 1;
   transform: translateY(0);
 }
+
 .toast.exit {
   opacity: 0;
   transform: translateY(20px);
 }
+
 .toast .toast-content {
   display: flex;
   align-items: center;
@@ -82,11 +77,13 @@
   font-size: 20px;
   border-radius: 50%;
 }
+
 .toast-content .message {
   display: flex;
   flex-direction: column;
   margin: 0 10px;
 }
+
 .message .text {
   font-size: 16px;
   font-weight: 400;
@@ -101,15 +98,34 @@
   cursor: pointer;
   opacity: 0.7;
 }
+
 .toast .close:hover {
   opacity: 1;
 }
+
 .toast .progress {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 3px;
+  height: 4px;
   width: 100%;
+  background-color: transparent;
+}
+
+.toast.success .progress:before {
+  background-color: #4caf50;
+}
+
+.toast.error .progress:before {
+  background-color: #f44336;
+}
+
+.toast.warning .progress:before {
+  background-color: #ff9800;
+}
+
+.toast.info .progress:before {
+  background-color: #2196f3;
 }
 
 .toast .progress:before {
@@ -119,23 +135,27 @@
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: #4caf50;
+  background-color: #4caf50; /* Default color, will be overridden */
   transform: translateX(100%);
 }
-.progress.active:before {
+
+.toast .progress.active:before {
   animation: progress 5s linear forwards;
 }
+
 @keyframes progress {
   to {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
 }
+
 .close {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .close::before,
 .close::after {
   content: "";
@@ -144,25 +164,11 @@
   height: 14px;
   background-color: #222;
 }
+
 .close::before {
   transform: rotate(45deg);
 }
+
 .close::after {
   transform: rotate(-45deg);
-}
-
-.toast.success {
-  background: #4caf50; /* Color para éxito */
-}
-
-.toast.error {
-  background: #f44336; /* Color para error */
-}
-
-.toast.warning {
-  background: #ff9800; /* Color para advertencia */
-}
-
-.toast.info {
-  background: #2196f3; /* Color para información */
 }

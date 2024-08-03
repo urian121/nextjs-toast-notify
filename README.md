@@ -27,7 +27,7 @@ const App = () => {
     toast.success('¡La operación se realizó con éxito!', {
       duration: 5000,
       progress: true,
-      position: 'top-right',
+      position: 'top-center',
     });
   };
 

@@ -1,12 +1,13 @@
 import "./styles/nextjs-toast-notify.css";
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
-const createToastContainer = (): HTMLElement => {
+const createToastContainer = (position: string): HTMLElement => {
   const container = document.createElement('div');
-  container.className = 'toast-container';
+  container.className = `toast-container ${position}`;
   document.body.appendChild(container);
   return container;
 };
+
 
 const removeToastContainerIfEmpty = () => {
   const toastContainer = document.querySelector('.toast-container') as HTMLElement;
@@ -15,14 +16,18 @@ const removeToastContainerIfEmpty = () => {
   }
 };
 
-const getToastContainer = (): HTMLElement => {
-  return document.querySelector('.toast-container') || createToastContainer();
+const getToastContainer = (position: string): HTMLElement => {
+  let container = document.querySelector(`.toast-container.${position}`) as HTMLElement;
+  if (!container) {
+    container = createToastContainer(position);
+  }
+  return container;
 };
 
 const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const { message, type = 'success' } = props;
-  const { duration = 5000, progress = true } = options;
-  const toastContainer = getToastContainer();
+  const { duration = 5000, progress = true, position = 'top-right' } = options;
+  const toastContainer = getToastContainer(position);
 
   const toast = document.createElement("div");
   toast.classList.add("toast", type);
@@ -58,6 +63,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     closeToast(toast);
   }, duration);
 };
+
 
 const closeToast = (toast: HTMLElement) => {
   const progress = toast.querySelector(".progress") as HTMLElement;
