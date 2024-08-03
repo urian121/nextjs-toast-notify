@@ -10,7 +10,7 @@ const createToastContainer = (position: string): HTMLElement => {
 
 const removeToastContainerIfEmpty = () => {
   const toastContainer = document.querySelector('.toast-container') as HTMLElement;
-  if (toastContainer && !toastContainer.querySelector('.toast')) {
+  if (toastContainer && !toastContainer.querySelector('.toast-nextjs')) {
     toastContainer.remove();
   }
 };
@@ -29,13 +29,13 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const toastContainer = getToastContainer(position);
 
   const toast = document.createElement("div");
-  toast.classList.add("toast", type);
+  toast.classList.add("toast-nextjs", type);
 
   // Añadir clase de animación de entrada
   if (transition) {
     toast.classList.add(`animate-${transition}`);
   } else {
-    toast.classList.add(`animate-fadeIn`); // Asegúrate de que 'fadeIn' esté definido en tu CSS
+    toast.classList.add(`animate-fadeIn`); 
   }
 
   toast.innerHTML = `
@@ -45,7 +45,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
         <span class="text text-2">${message}</span>
       </div>
     </div>
-    <i class="close"></i>
+    <i class="close-toast"></i>
     ${progress ? '<div class="progress"></div>' : ''}
   `;
 
@@ -55,16 +55,16 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   // Asegurarse de que la animación se aplique después de agregar al DOM
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      toast.classList.add("active");
+      toast.classList.add("toast-active");
       if (progress) {
         const progressElement = toast.querySelector(".progress") as HTMLElement;
-        progressElement.classList.add("active");
+        progressElement.classList.add("toast-active");
       }
     });
   });
 
   // Añadir evento de cierre
-  const closeButton = toast.querySelector(".close") as HTMLElement;
+  const closeButton = toast.querySelector(".close-toast") as HTMLElement;
   closeButton.addEventListener('click', () => closeToast(toast));
 
   // Programar el cierre después de la duración especificada
@@ -77,11 +77,11 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
 const closeToast = (toast: HTMLElement) => {
   const progress = toast.querySelector(".progress") as HTMLElement;
   if (progress) {
-    progress.classList.remove("active");
+    progress.classList.remove("toast-active");
   }
 
   // Añadir la clase de animación de salida
-  toast.classList.remove("active");
+  toast.classList.remove("toast-active");
 
   // Verificar y aplicar la animación de salida
   if (toast.classList.contains("animate-fadeIn")) {

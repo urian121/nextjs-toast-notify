@@ -38,7 +38,7 @@
   right: 30px;
 }
 
-.toast {
+.toast-nextjs {
   width: 350px;
   border-radius: 6px;
   background: #fff;
@@ -51,17 +51,17 @@
   pointer-events: all;
 }
 
-.toast.active {
+.toast.toast-active {
   opacity: 1;
   transform: translateY(0);
 }
-
+/*
 .toast.exit {
   opacity: 0;
   transform: translateY(20px);
-}
+}*/
 
-.toast .toast-content {
+.toast-nextjs .toast-content {
   display: flex;
   align-items: center;
 }
@@ -90,7 +90,7 @@
   color: #666666;
 }
 
-.toast .close {
+.toast-nextjs .close-toast {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -99,11 +99,11 @@
   opacity: 0.7;
 }
 
-.toast .close:hover {
+.toast-nextjs .close-toast:hover {
   opacity: 1;
 }
 
-.toast .progress {
+.toast-nextjs .progress {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -128,7 +128,7 @@
   background-color: #2196f3;
 }
 
-.toast .progress:before {
+.toast-nextjs .progress:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -139,7 +139,7 @@
   transform: translateX(100%);
 }
 
-.toast .progress.active:before {
+.toast-nextjs .progress.toast-active:before {
   animation: progress 5s linear forwards;
 }
 
@@ -149,15 +149,15 @@
   }
 }
 
-.close {
+.close-toast {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.close::before,
-.close::after {
+.close-toast::before,
+.close-toast::after {
   content: "";
   position: absolute;
   width: 2px;
@@ -165,11 +165,11 @@
   background-color: #222;
 }
 
-.close::before {
+.close-toast::before {
   transform: rotate(45deg);
 }
 
-.close::after {
+.close-toast::after {
   transform: rotate(-45deg);
 }
 /***/
