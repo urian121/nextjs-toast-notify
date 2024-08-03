@@ -17,7 +17,7 @@ Este paquete fue creado para simplificar la implementación de notificaciones en
 
 En muchas aplicaciones web, los desarrolladores necesitan una forma efectiva de mostrar mensajes de notificación al usuario sin interrumpir la interacción actual. Las notificaciones (toasts) proporcionan una manera elegante y no intrusiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **NextJS Toast Notify** resuelve esta necesidad al ofrecer una solución fácil de integrar y altamente configurable.
 
-## Ventajas y Caracteristicas
+## Ventajas
 
 - **Fácil Integración**: Simple de agregar y utilizar en cualquier proyecto web.
 - **Altamente Configurable**: Personaliza la duración, la posición, el progreso y el tipo de notificación.
@@ -36,9 +36,6 @@ En muchas aplicaciones web, los desarrolladores necesitan una forma efectiva de 
 ## Instalación
 
 Puedes instalar el paquete usando npm:
-
-
-## Instalación
 
     $ npm install nextjs-toast-notify --save
     $ yarn add nextjs-toast-notify
