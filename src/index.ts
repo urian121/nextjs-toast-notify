@@ -1,6 +1,11 @@
 import "./styles/nextjs-toast-notify.css";
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
+/**
+ * Crea un contenedor para las notificaciones de toast en la página si no existe uno.
+ * @param position - La posición del contenedor (e.g., 'top-right', 'bottom-left').
+ * @returns El contenedor creado o existente.
+ */
 const createToastContainer = (position: string): HTMLElement => {
   const container = document.createElement('div');
   container.className = `toast-container ${position}`;
@@ -8,6 +13,10 @@ const createToastContainer = (position: string): HTMLElement => {
   return container;
 };
 
+
+/**
+ * Elimina el contenedor de notificaciones si está vacío.
+ */
 const removeToastContainerIfEmpty = () => {
   const toastContainer = document.querySelector('.toast-container') as HTMLElement;
   if (toastContainer && !toastContainer.querySelector('.toast-nextjs')) {
@@ -15,6 +24,13 @@ const removeToastContainerIfEmpty = () => {
   }
 };
 
+
+/**
+ * Obtiene el contenedor de notificaciones para la posición especificada.
+ * Si no existe, se crea uno nuevo.
+ * @param position - La posición del contenedor (e.g., 'top-right', 'bottom-left').
+ * @returns El contenedor de notificaciones.
+ */
 const getToastContainer = (position: string): HTMLElement => {
   let container = document.querySelector(`.toast-container.${position}`) as HTMLElement;
   if (!container) {
@@ -23,6 +39,12 @@ const getToastContainer = (position: string): HTMLElement => {
   return container;
 };
 
+
+/**
+ * Muestra una notificación de toast con los parámetros especificados.
+ * @param props - Propiedades de la notificación (e.g., mensaje, tipo).
+ * @param options - Opciones adicionales para la notificación (e.g., duración, posición, transición).
+ */
 const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const { message, type = 'success' } = props;
   const { duration = 5000, progress = true, position = 'top-right', transition = 'fadeIn' } = options; // 'fadeIn' es el valor por defecto
@@ -74,6 +96,10 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
 };
 
 
+/**
+ * Cierra una notificación de toast y la elimina después de la animación de salida.
+ * @param toast - El elemento de la notificación de toast que se cerrará.
+ */
 const closeToast = (toast: HTMLElement) => {
   const progress = toast.querySelector(".progress") as HTMLElement;
   if (progress) {
@@ -100,13 +126,19 @@ const closeToast = (toast: HTMLElement) => {
 };
 
 
-// Métodos estáticos para diferentes tipos
+// Métodos estáticos para diferentes tipos de notificaciones
+/**
+ * Crea un método para mostrar notificaciones de un tipo específico.
+ * @param type - Tipo de notificación (e.g., 'success', 'error', 'warning', 'info').
+ * @returns Una función para mostrar notificaciones de ese tipo.
+ */
 const createToastMethod = (type: 'success' | 'error' | 'warning' | 'info') => {
   return (message: string, options: ToastOptions = {}) => {
     showToast({ message, type }, options);
   };
 };
 
+// Objeto de métodos de notificación
 const toast = {
   success: createToastMethod('success'),
   error: createToastMethod('error'),

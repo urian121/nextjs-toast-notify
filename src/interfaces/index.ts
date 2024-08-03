@@ -1,13 +1,27 @@
-// interfaces/index.ts
+/**
+ * Opciones para configurar una notificación de toast.
+ */
 export interface ToastOptions {
+  /** Duración en milisegundos que se mostrará la notificación (default: 5000). */
   duration?: number;
+
+  /** Muestra una barra de progreso (default: true). */
   progress?: boolean;
+
+  /** Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right'). */
   position?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+
+  /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn'. */
   transition?: 'bounceIn' | 'fadeIn';
-  pauseOnHover?: boolean;
 }
 
+/**
+ * Propiedades para una notificación de toast.
+ */
 export interface ToastProps {
+  /** Mensaje a mostrar en la notificación. */
   message: string;
-  type?: 'success' | 'error' | 'warning' | 'info'; // Tipo de alerta
+
+  /** Tipo de notificación. Opciones: 'success', 'error', 'warning', 'info' (default: 'success'). */
+  type?: 'success' | 'error' | 'warning' | 'info';
 }
