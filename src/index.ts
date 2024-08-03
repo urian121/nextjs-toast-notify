@@ -35,7 +35,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   if (transition) {
     toast.classList.add(`animate-${transition}`);
   } else {
-    toast.classList.add(`animate-fadeIn`); 
+    toast.classList.add(`animate-fadeIn`);
   }
 
   toast.innerHTML = `

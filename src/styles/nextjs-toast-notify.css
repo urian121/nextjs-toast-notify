@@ -55,11 +55,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-/*
-.toast.exit {
-  opacity: 0;
-  transform: translateY(20px);
-}*/
 
 .toast-nextjs .toast-content {
   display: flex;
