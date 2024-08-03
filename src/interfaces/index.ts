@@ -13,6 +13,9 @@ export interface ToastOptions {
 
   /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn'. */
   transition?: 'bounceIn' | 'fadeIn';
+
+  /** Icono personalizado para la notificación (opcional). */
+  icon?: string;
 }
 
 /**
