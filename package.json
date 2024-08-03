@@ -11,7 +11,7 @@
     "rename-css": "mv dist/style.css dist/nextjs-toast-notify.css",
     "dev": "vite"
   },
- "keywords": [
+  "keywords": [
     "toast",
     "notifications",
     "nextjs",
@@ -27,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
+    "lucide-react": "^0.424.0",
     "typescript": "^5.5.3",
     "vite": "^5.3.4"
   },

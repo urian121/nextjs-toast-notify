@@ -60,14 +60,13 @@
   display: flex;
   align-items: center;
 }
-
+/***/
 .toast-content .check {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 35px;
   min-width: 35px;
-  background-color: #4caf50;
   color: #fff;
   font-size: 20px;
   border-radius: 50%;
@@ -107,19 +106,19 @@
   background-color: transparent;
 }
 
-.toast.success .progress:before {
+.toast-nextjs.success .progress:before {
   background-color: #4caf50;
 }
 
-.toast.error .progress:before {
+.toast-nextjs.error .progress:before {
   background-color: #f44336;
 }
 
-.toast.warning .progress:before {
+.toast-nextjs.warning .progress:before {
   background-color: #ff9800;
 }
 
-.toast.info .progress:before {
+.toast-nextjs.info .progress:before {
   background-color: #2196f3;
 }
 
@@ -130,7 +129,7 @@
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: #4caf50; /* Default color, will be overridden */
+  background-color: #4caf50;
   transform: translateX(100%);
 }
 
@@ -167,7 +166,7 @@
 .close-toast::after {
   transform: rotate(-45deg);
 }
-/***/
+
 /* Fade in animation */
 @keyframes fadeIn {
   0% {
@@ -191,6 +190,7 @@
     transform: translateY(20px);
   }
 }
+
 /* Classes to apply animations */
 .animate-fadeIn {
   animation: fadeIn 0.5s forwards;
