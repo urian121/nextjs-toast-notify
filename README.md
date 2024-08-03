@@ -28,6 +28,7 @@ const App = () => {
       duration: 5000,
       progress: true,
       position: 'top-center',
+      pauseOnHover: true,
     });
   };
 
