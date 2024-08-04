@@ -38,8 +38,13 @@ Puedes instalar el paquete usando npm:
     $ npm install nextjs-toast-notify --save
     $ yarn add nextjs-toast-notify
 
-
 ## Casos de uso:
+
+### Implementar Loading Request en el envío de un formulario
+
+![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
+👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
+
 
 ## Ejemplo Práctico utilizando React.js
 
@@ -231,5 +236,4 @@ Aquí tienes un ejemplo de cómo configurarlo:
 toast.success('¡Operación exitosa!', {
   position: 'top-right',
 });
-
 ```
