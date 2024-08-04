@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   build: {
@@ -12,13 +13,20 @@ export default defineConfig({
     rollupOptions: {
       output: {
         entryFileNames: 'index.js',
-        // Por defecto no renombra el CSS, lo hacemos en el siguiente paso
       },
     },
   },
   plugins: [
     dts({
       outDir: 'dist',
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/sonidos/*',
+          dest: 'sonidos',
+        },
+      ],
     }),
   ],
 });

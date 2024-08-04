@@ -1,6 +1,18 @@
 import "./styles/nextjs-toast-notify.css";
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
+// Importar el sonido
+import chasquidoSound from "./sonidos/chasquido.mp3";
+
+/**
+ * Reproduce el sonido especificado.
+ */
+const playSound = () => {
+  const audio = new Audio(chasquidoSound);
+  audio.play();
+};
+
+
 /**
  * Crea un contenedor para las notificaciones de toast en la página si no existe uno.
  * @param position - La posición del contenedor (e.g., 'top-right', 'bottom-left').
@@ -51,10 +63,11 @@ const getToastContainer = (position: string): HTMLElement => {
  * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right').
  * @param options.transition - Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn'.
  * @param options.icon - Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
+ * @param options.sonido - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
 const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const { message, type = 'success' } = props;
-  const { duration = 5000, progress = true, position = 'top-right', transition = 'fadeIn', icon } = options;
+  const { duration = 5000, progress = true, position = 'top-right', transition = 'fadeIn', icon, sonido } = options;
   const toastContainer = getToastContainer(position);
 
   const toast = document.createElement("div");
@@ -99,9 +112,14 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     <i class="close-toast"></i>
     ${progress ? '<div class="progress"></div>' : ''}
   `;
-
+    
   // Añadir el toast al contenedor
   toastContainer.appendChild(toast);
+
+  // Reproducir sonido toast
+  if (sonido) {
+    playSound();
+  }
 
   // Asegurarse de que la animación se aplique después de agregar al DOM
   requestAnimationFrame(() => {
