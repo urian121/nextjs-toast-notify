@@ -60,6 +60,9 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const toast = document.createElement("div");
   toast.classList.add("toast-nextjs", type);
 
+  // Añadir la variable CSS para la duración del progreso
+  toast.style.setProperty('--progress-duration', `${duration}ms`);
+
   // Añadir clase de animación de entrada
   if (transition) {
     toast.classList.add(`animate-${transition}`);
@@ -120,6 +123,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     closeToast(toast);
   }, duration);
 };
+
 
 
 /**
