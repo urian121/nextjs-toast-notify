@@ -1,7 +1,7 @@
 # Nextjs Toast Notify
 
 [![npm version](https://img.shields.io/npm/v/nextjs-toast-notify.svg?style=flat-square)](https://www.npmjs.com/package/nextjs-toast-notify)
-[![GitHub Repo](https://img.shields.io/badge/repository-GitHub-blue?style=flat-square&logo=github)](https://github.com/urian121/nextjs-toast-notify)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-repository-blue?style=flat-square&logo=github)](https://github.com/urian121/nextjs-toast-notify)
 [![npm](https://img.shields.io/npm/dt/nextjs-toast-notify.svg)](https://www.npmjs.com/package/nextjs-toast-notify)
 
 
@@ -237,3 +237,30 @@ toast.success('¡Operación exitosa!', {
   position: 'top-right',
 });
 ```
+
+### Únete y Contribuye
+
+Si encuentras algún problema o tienes una idea para mejorar el paquete, por favor abre un issue o envía un pull request 
+en GitHub: https://github.com/urian121/nextjs-toast-notify
+
+## Desarrollado por
+
+- [Urian Viera](https://github.com/urian123)
+- [Mi portafolio](https://www.urianviera.com)
+- [Canal de Youtube](https://www.youtube.com/WebDeveloperUrianViera)
+- [¡Donar a través de PayPal!](https://www.paypal.com/donate/?hosted_button_id=4SV78MQJJH3VE)
+- [Email](mailto:urian1213viera@gmail.com)
+
+## Copyright
+
+© 2024 Urian Viera. Todos los derechos reservados.
+
+## License
+
+Licensed under ISC
+
+[![GitHub](https://img.shields.io/badge/GitHub-urian121/nextjs--toast--notify-181717?logo=github&style=flat-square)](https://github.com/urian121/nextjs-toast-notify)
+
+## Agradecimientos
+
+¡Gracias a todos los **Devs** 👨‍💻 que han utilizado y contribuido al desarrollo de **Nextjs Toast Notify**! Su apoyo y retroalimentación son fundamentales para mejorar continuamente este paquete.
