@@ -1,6 +1,6 @@
 {
   "name": "nextjs-toast-notify",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Un paquete para notificaciones emergentes (toasts) en aplicaciones Next.js. Inspirado en React-Toastify, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.",
   "type": "module",
   "main": "dist/index.js",
