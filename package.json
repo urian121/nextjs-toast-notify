@@ -5,7 +5,7 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "scripts": {
     "build": "vite build && npm run rename-css",
     "rename-css": "mv dist/style.css dist/nextjs-toast-notify.css",
