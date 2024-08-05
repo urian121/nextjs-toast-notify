@@ -6,15 +6,15 @@
 
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 
-**NextJS Toast Notify** es un paquete npm diseñado para mostrar notificaciones emergentes (toasts) en aplicaciones web. Estas notificaciones se utilizan comúnmente para proporcionar retroalimentación al usuario de manera visual y temporal, sin interrumpir la experiencia de navegación, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.
+**Nextjs Toast Notify** es un paquete npm diseñado para mostrar notificaciones emergentes (toasts) en aplicaciones web. Estas notificaciones se utilizan comúnmente para proporcionar retroalimentación al usuario de manera visual y temporal, sin interrumpir la experiencia de navegación, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.
 
 ## ¿Para Qué Fue Creado?
 
-Este paquete fue creado para simplificar la implementación de notificaciones en aplicaciones web, permitiendo a los desarrolladores agregar mensajes informativos, de éxito, advertencia o error de forma rápida y sencilla. **NextJS Toast Notify** es altamente personalizable y compatible con diferentes posiciones en la pantalla, así como con varios efectos de animación para mejorar la experiencia del usuario.
+Este paquete fue creado para simplificar la implementación de notificaciones en aplicaciones web, permitiendo a los desarrolladores agregar mensajes informativos, de éxito, advertencia o error de forma rápida y sencilla. **Nextjs Toast Notify** es altamente personalizable y compatible con diferentes posiciones en la pantalla, así como con varios efectos de animación para mejorar la experiencia del usuario.
 
-## Necesidad que Resuelve
+## ¿Qué necesidad resuelve?
 
-En muchas aplicaciones web, los desarrolladores necesitan una forma efectiva de mostrar mensajes de notificación al usuario sin interrumpir la interacción actual. Las notificaciones (toasts) proporcionan una manera elegante y no intrusiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **NextJS Toast Notify** resuelve esta necesidad al ofrecer una solución fácil de integrar y altamente configurable.
+Este paquete responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual. En muchas aplicaciones web, es crucial tener una forma efectiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **Nextjs Toast Notify** proporcionan una manera elegante y no invasiva de cumplir con esta función.
 
 ## Ventajas y Características Clave
 
@@ -128,11 +128,11 @@ toast.success('¡Operación exitosa!', {
 
 ## API
 
-La API de **NextJS Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
+La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
 
 ### Métodos
 
-**NextJS Toast Notify** expone métodos estáticos para los diferentes tipos de notificaciones:
+**Nextjs Toast Notify** expone métodos estáticos para los diferentes tipos de notificaciones:
 
 - **`toast.success(message: string, options?: ToastOptions): void`**  
   Muestra una notificación de éxito.
