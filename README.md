@@ -16,22 +16,6 @@ Este paquete fue creado para simplificar la implementación de notificaciones en
 
 Este paquete responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual. En muchas aplicaciones web, es crucial tener una forma efectiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **Nextjs Toast Notify** proporcionan una manera elegante y no invasiva de cumplir con esta función.
 
-## Ventajas y Características Clave
-
-- **Fácil Integración**: Simple de agregar y utilizar en cualquier proyecto web.
-- **Altamente Configurable**: Personaliza la duración, la posición, el progreso y el tipo de notificación.
-- **Integración rápida:** Instalación simple a través de npm o yarn, listo para usar en minutos.
-- **Efectos de Animación**: Soporta diferentes efectos de animación para las notificaciones de entrada y salida.
-- **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
-- **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
-- **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `fadeOut`, `bounceIn`, `bounceOut`).
-- **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
-- **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
-- **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
-- **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
-- **Licencia abierta:** Publicado bajo licencia ISC, permitiendo su uso en proyectos comerciales y personales sin restricciones.
-- **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
 
 ## Instalación
 
@@ -124,6 +108,24 @@ toast.success('¡Operación exitosa!', {
   position: 'top-right', // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 });
 ```
+
+
+## Ventajas y Características Clave
+
+- **Fácil Integración**: Simple de agregar y utilizar en cualquier proyecto web.
+- **Altamente Configurable**: Personaliza la duración, la posición, el progreso y el tipo de notificación.
+- **Integración rápida:** Instalación simple a través de npm o yarn, listo para usar en minutos.
+- **Efectos de Animación**: Soporta diferentes efectos de animación para las notificaciones de entrada y salida.
+- **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
+- **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
+- **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
+- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `fadeOut`, `bounceIn`, `bounceOut`).
+- **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
+- **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
+- **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
+- **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
+- **Licencia abierta:** Publicado bajo licencia ISC, permitiendo su uso en proyectos comerciales y personales sin restricciones.
+- **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
 
 
 ## API
