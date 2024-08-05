@@ -65,7 +65,7 @@ function App() {
   };
 
   return (
-    <button id="top-center" onClick={handleShowToastCenter}>Top center</button>
+    <button onClick={handleShowToastCenter}>Top center</button>
   );
 }
 
@@ -127,7 +127,18 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
   _Default_: `'false'`
 
 
-#### Mostrar una notificación de éxito con animación personalizada
+# Tipos de Notificaciones
+Para mostrar notificaciones de un tipo específico, solo necesitas especificar el tipo de toast (toast.success, toast.error, toast.warning, toast.info). A continuación se describen los tipos de toasts disponibles y cómo configurarlos:
+
+### Tipos de Toast
+
+- **`toast.success`**: Muestra un toast de éxito.
+- **`toast.error`**: Muestra un toast de error.
+- **`toast.warning`**: Muestra un toast de advertencia.
+- **`toast.info`**: Muestra un toast de información.
+
+
+### Ejemplos de Uso
 
 ```jsx
   import toast from 'nextjs-toast-notify';
@@ -135,89 +146,16 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
 
   function App() {
     const handleShowSuccessToast = () => {
-      toast.success('¡La operación se realizó con éxito!', {
-        duration: 5000,
-        progress: true,
-        position: 'top-right',
-        transition: 'bounceIn'
-      });
+      toast.success('¡La operación se realizó con éxito!', {});
     };
 
     return (
-        <button id="top-center" onClick={handleShowSuccessToast}>Toast Success</button>
+        <button onClick={handleShowSuccessToast}>Toast Success</button>
     );
   }
   export default App;
 ```
 
-## Mostrar una notificación de error sin barra de progreso
-
-```jsx
-  import toast from 'nextjs-toast-notify';
-  import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
-
-  function App() {
-  const handleShowErrorToast = () => {
-    toast.error('Ocurrió un error al procesar la solicitud.', {
-      duration: 7000,
-      progress: false,
-      position: 'bottom-left'
-    });
-  };
-
-    return (
-        <button id="top-center" onClick={handleShowErrorToast}>Toast Error</button>
-    );
-  }
-  export default App;
-```
-
-## Mostrar una notificación informativa con animación de salida
-
-```jsx
-  import toast from 'nextjs-toast-notify';
-  import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
-
-  function App() {
-    const handleShowInfoToast = () => {
-      toast.info('Información importante disponible.', {
-        duration: 4000,
-        progress: true,
-        position: 'bottom-center',
-        transition: 'fadeOut'
-      });
-    };
-
-    return (
-      <button id="top-center" onClick={handleShowInfoToast}>Toast Info</button>
-    );
-  }
-
-  export default App;
-```
-
-## Mostrar una notificación Warning con animación de salida
-
-```jsx
-  import toast from 'nextjs-toast-notify';
-  import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
-
-  function App() {
-    const handleShowWarningToast = () => {
-      toast.warning('Información importante disponible.', {
-        duration: 4000,
-        progress: true,
-        position: 'bottom-center',
-      });
-    };
-
-    return (
-      <button id="top-center" onClick={handleShowInfoToast}>Toast Warning</button>
-    );
-  }
-
-  export default App;
-```
 
 ## Mostrar Notificaciones en Diferentes Posiciones
 
@@ -234,7 +172,7 @@ Aquí tienes un ejemplo de cómo configurarlo:
 
 ```jsx
 toast.success('¡Operación exitosa!', {
-  position: 'top-right',
+  position: 'top-right', // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 });
 ```
 
