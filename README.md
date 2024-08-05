@@ -73,6 +73,57 @@ export default App;
 ```
 
 
+# Tipos de Notificaciones
+
+Para mostrar notificaciones de un tipo específico, solo necesitas especificar el tipo de toast (toast.success, toast.error, toast.warning, toast.info). A continuación se describen los tipos de toasts disponibles y cómo configurarlos:
+
+### Tipos de Toast
+
+- **`toast.success`**: Muestra un toast de éxito.
+- **`toast.error`**: Muestra un toast de error.
+- **`toast.warning`**: Muestra un toast de advertencia.
+- **`toast.info`**: Muestra un toast de información.
+
+
+### Ejemplos de Uso
+
+```jsx
+  import toast from 'nextjs-toast-notify';
+  import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
+
+  function App() {
+    const handleShowSuccessToast = () => {
+      toast.success('¡La operación se realizó con éxito!', {});
+    };
+
+    return (
+        <button onClick={handleShowSuccessToast}>Toast Success</button>
+    );
+  }
+  export default App;
+```
+
+
+## Mostrar Notificaciones en Diferentes Posiciones
+
+Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesitas especificar la opción `position` con uno de los siguientes valores:
+
+- **`top-left`**: Esquina superior izquierda
+- **`top-center`**: Centro superior
+- **`top-right`**: Esquina superior derecha
+- **`bottom-left`**: Esquina inferior izquierda
+- **`bottom-center`**: Centro inferior
+- **`bottom-right`**: Esquina inferior derecha
+
+Aquí tienes un ejemplo de cómo configurarlo:
+
+```jsx
+toast.success('¡Operación exitosa!', {
+  position: 'top-right', // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
+});
+```
+
+
 ## API
 
 La API de **NextJS Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
@@ -126,55 +177,6 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
   Reproduce un sonido cuando se muestra la notificación.
   _Default_: `'false'`
 
-
-# Tipos de Notificaciones
-Para mostrar notificaciones de un tipo específico, solo necesitas especificar el tipo de toast (toast.success, toast.error, toast.warning, toast.info). A continuación se describen los tipos de toasts disponibles y cómo configurarlos:
-
-### Tipos de Toast
-
-- **`toast.success`**: Muestra un toast de éxito.
-- **`toast.error`**: Muestra un toast de error.
-- **`toast.warning`**: Muestra un toast de advertencia.
-- **`toast.info`**: Muestra un toast de información.
-
-
-### Ejemplos de Uso
-
-```jsx
-  import toast from 'nextjs-toast-notify';
-  import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
-
-  function App() {
-    const handleShowSuccessToast = () => {
-      toast.success('¡La operación se realizó con éxito!', {});
-    };
-
-    return (
-        <button onClick={handleShowSuccessToast}>Toast Success</button>
-    );
-  }
-  export default App;
-```
-
-
-## Mostrar Notificaciones en Diferentes Posiciones
-
-Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesitas especificar la opción `position` con uno de los siguientes valores:
-
-- **`top-left`**: Esquina superior izquierda
-- **`top-center`**: Centro superior
-- **`top-right`**: Esquina superior derecha
-- **`bottom-left`**: Esquina inferior izquierda
-- **`bottom-center`**: Centro inferior
-- **`bottom-right`**: Esquina inferior derecha
-
-Aquí tienes un ejemplo de cómo configurarlo:
-
-```jsx
-toast.success('¡Operación exitosa!', {
-  position: 'top-right', // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
-});
-```
 
 ### Únete y Contribuye
 
