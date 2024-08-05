@@ -194,4 +194,4 @@ const toast = {
   info: createToastMethod('info'),
 };
 
-export default toast;
+export { toast };

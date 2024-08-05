@@ -176,7 +176,7 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
   `string`
   Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación. 
 
-- **`icon`**:  
+- **`sonido`**:  
   `boolean`
   Reproduce un sonido cuando se muestra la notificación.
   _Default_: `'false'`
