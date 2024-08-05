@@ -4,6 +4,7 @@
 [![GitHub Repo](https://img.shields.io/badge/GitHub-repository-blue?style=flat-square&logo=github)](https://github.com/urian121/nextjs-toast-notify)
 [![npm](https://img.shields.io/npm/dt/nextjs-toast-notify.svg)](https://www.npmjs.com/package/nextjs-toast-notify)
 
+![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 
 **NextJS Toast Notify** es un paquete npm diseñado para mostrar notificaciones emergentes (toasts) en aplicaciones web. Estas notificaciones se utilizan comúnmente para proporcionar retroalimentación al usuario de manera visual y temporal, sin interrumpir la experiencia de navegación, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.
 
@@ -15,21 +16,22 @@ Este paquete fue creado para simplificar la implementación de notificaciones en
 
 En muchas aplicaciones web, los desarrolladores necesitan una forma efectiva de mostrar mensajes de notificación al usuario sin interrumpir la interacción actual. Las notificaciones (toasts) proporcionan una manera elegante y no intrusiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **NextJS Toast Notify** resuelve esta necesidad al ofrecer una solución fácil de integrar y altamente configurable.
 
-## Ventajas
+## Ventajas y Características Clave
 
 - **Fácil Integración**: Simple de agregar y utilizar en cualquier proyecto web.
 - **Altamente Configurable**: Personaliza la duración, la posición, el progreso y el tipo de notificación.
+- **Integración rápida:** Instalación simple a través de npm o yarn, listo para usar en minutos.
 - **Efectos de Animación**: Soporta diferentes efectos de animación para las notificaciones de entrada y salida.
 - **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
-
-## Características Clave
-
 - **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
 - **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
 - **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `fadeOut`, `bounceIn`, `bounceOut`).
 - **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
+- **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
+- **Licencia abierta:** Publicado bajo licencia ISC, permitiendo su uso en proyectos comerciales y personales sin restricciones.
+- **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
 
 ## Instalación
 
