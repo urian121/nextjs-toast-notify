@@ -61,7 +61,7 @@ const getToastContainer = (position: string): HTMLElement => {
  * @param options.duration - Duración en milisegundos que se mostrará la notificación (default: 5000).
  * @param options.progress - Muestra una barra de progreso (default: true).
  * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right').
- * @param options.transition - Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn'.
+ * @param options.transition - Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn', 'bottomToTopBounce'.
  * @param options.icon - Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
  * @param options.sonido - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
