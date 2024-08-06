@@ -164,6 +164,9 @@ const closeToast = (toast: HTMLElement) => {
   } else if (toast.classList.contains("animate-bounceIn")) {
     toast.classList.remove("animate-bounceIn");
     toast.classList.add("animate-bounceOut");
+  } else if (toast.classList.contains("animate-bottomToTopBounce")) {
+    toast.classList.remove("animate-bottomToTopBounce");
+    toast.classList.add("animate-topToBottomBounce");
   }
 
   // Eliminar el toast después de la duración de la animación de salida
