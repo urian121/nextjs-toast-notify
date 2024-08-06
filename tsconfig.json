@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
     "moduleResolution": "node",
     "declaration": true,
@@ -11,9 +11,12 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
+
   "include": [
     "src/**/*.ts",
     "interfaces/**/*.ts",
     "declarations.d.ts"
+
   ]
+
 }
