@@ -35,7 +35,7 @@ Puedes instalar el paquete usando npm:
 ## Ejemplo Práctico utilizando React.js
 
 ```jsx
-import toast from 'nextjs-toast-notify';
+import { toast } from 'nextjs-toast-notify';
 import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
 
 function App() {
@@ -74,7 +74,7 @@ Para mostrar notificaciones de un tipo específico, solo necesitas especificar e
 ### Ejemplos de Uso
 
 ```jsx
-  import toast from 'nextjs-toast-notify';
+  import { toast } from 'nextjs-toast-notify';
   import 'nextjs-toast-notify/dist/nextjs-toast-notify.css';
 
   function App() {

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
     "declaration": true,
@@ -16,7 +16,6 @@
     "src/**/*.ts",
     "interfaces/**/*.ts",
     "declarations.d.ts"
-
-  ]
-
+  ],
+  "exclude": ["node_modules", "dist"]
 }
