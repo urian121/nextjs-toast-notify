@@ -1,6 +1,6 @@
 {
   "name": "nextjs-toast-notify",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Es un paquete npm diseñado para mostrar notificaciones emergentes (toasts) en aplicaciones web. Estas notificaciones se utilizan comúnmente para proporcionar retroalimentación al usuario de manera visual y temporal, sin interrumpir la experiencia de navegación, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.",
   "type": "module",
   "main": "dist/index.js",
