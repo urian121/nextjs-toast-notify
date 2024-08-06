@@ -44,7 +44,7 @@ function App() {
       duration: 15000,
       progress: true,
       position: 'bottom-center',
-      transition: 'fadeIn',
+      transition: 'bounceIn',
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>',
       sonido: true,
     });
@@ -61,7 +61,7 @@ export default App;
 
 # Tipos de Notificaciones
 
-Para mostrar notificaciones de un tipo específico, solo necesitas especificar el tipo de toast (toast.success, toast.error, toast.warning, toast.info). A continuación se describen los tipos de toasts disponibles y cómo configurarlos:
+Para mostrar notificaciones de un tipo específico, solo necesitas especificar el tipo de toast. A continuación se describen los tipos de toasts disponibles y cómo configurarlos:
 
 ### Tipos de Toast
 
@@ -119,7 +119,7 @@ toast.success('¡Operación exitosa!', {
 - **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
 - **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
 - **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `fadeOut`, `bounceIn`, `bounceOut`).
+- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `bottomToTopBounce`).  
 - **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
@@ -152,34 +152,34 @@ La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes c
 
 Las opciones para personalizar las notificaciones se pueden pasar como el segundo parámetro a cada uno de los métodos anteriores. Las opciones disponibles son:
 
-- **`duration`**:  
-  `number`  
-  La duración de la notificación en milisegundos.  
-  _Default_: `5000`
+- **`duration`**:
+  - **Tipo**: `number`
+  - **Descripción**: Define la duración de la notificación en milisegundos.
+  - **Valor por defecto**: `5000`
 
-- **`progress`**:  
-  `boolean`  
-  Si se debe mostrar una barra de progreso para la notificación.  
-  _Default_: `true`
+- **`progress`**:
+  - **Tipo**: `boolean`
+  - **Descripción**: Si se debe mostrar una barra de progreso para la notificación.
+  - **Valor por defecto**: `true`
 
-- **`position`**:  
-  `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`  
-  La posición de la notificación en la pantalla.  
-  _Default_: `'top-right'`
+- **`position`**:
+  - **Tipo**: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
+  - **Descripción**: La posición de la notificación en la pantalla.
+  - **Valor por defecto**: `'top-right'`
 
-- **`transition`**:  
-  `'fadeIn' | 'fadeOut' | 'bounceIn' | 'bounceOut'`  
-  El efecto de animación de entrada o salida para la notificación.  
-  _Default_: `'fadeIn'`
+- **`transition`**:
+  - **Tipo**: `'fadeIn' | 'bounceIn' | 'bottomToTopBounce'`
+  - **Descripción**: El efecto de animación de entrada o salida para la notificación.
+  - **Valor por defecto**: `'fadeIn'`
 
-- **`icon`**:  
-  `string`
-  Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación. 
+- **`icon`**:
+  - **Tipo**: `string`
+  - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
 
 - **`sonido`**:  
-  `boolean`
-  Reproduce un sonido cuando se muestra la notificación.
-  _Default_: `'false'`
+  - **Tipo**: `boolean`
+  - **Descripción**: Reproduce un sonido cuando se muestra la notificación.
+  - **Valor por defecto**: `false`
 
 
 ### Únete y Contribuye

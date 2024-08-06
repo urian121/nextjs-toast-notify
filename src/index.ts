@@ -15,7 +15,7 @@ const playSound = () => {
 
 /**
  * Crea un contenedor para las notificaciones de toast en la página si no existe uno.
- * @param position - La posición del contenedor (e.g., 'top-right', 'bottom-left').
+ * @param position - La posición del contenedor ('top-right', 'bottom-left').
  * @returns El contenedor creado o existente.
  */
 const createToastContainer = (position: string): HTMLElement => {
