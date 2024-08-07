@@ -6,7 +6,7 @@
 
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 
-**Nextjs Toast Notify** es un paquete npm diseñado para mostrar notificaciones emergentes (toasts) en aplicaciones web. Estas notificaciones se utilizan comúnmente para proporcionar retroalimentación al usuario de manera visual y temporal, sin interrumpir la experiencia de navegación, ofrece una solución simple y personalizable para mostrar mensajes de alerta, éxito, error y más.
+**Nextjs Toast Notify** es un paquete npm imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js. Ideal para proporcionar retroalimentación visual clara y efectiva sin interrumpir la experiencia del usuario, este paquete te permite mostrar mensajes de alerta, éxito, error y mucho más de manera **personalizable y elegante.** Con una configuración intuitiva y opciones flexibles, **Nextjs Toast Notify** te ofrece la herramienta perfecta para mantener a tus usuarios informados y mejorar la interacción con tu aplicación.
 
 ## ¿Para Qué Fue Creado?
 
@@ -109,6 +109,38 @@ toast.success('¡Operación exitosa!', {
 });
 ```
 
+## Uso a través de CDN
+
+También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utilizando un enlace CDN. Sigue estos pasos:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nextjs Toast Notify con CDN</title>
+  <!-- Incluir el CSS del paquete -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.11.0/dist/nextjs-toast-notify.css">
+</head>
+<body>
+  <button id="show-toast">Show Toast</button>
+
+  <script type="module">
+    import { toast } from "https://unpkg.com/nextjs-toast-notify@1.11.0/dist/index.js";
+
+    document.getElementById('show-toast').addEventListener('click', () => {
+      toast.success('Hola a todos los Devs!', {
+        duration: 3000, // Duración de la notificación en ms
+        position: 'top-right', // Posición de la notificación
+        transition: 'bounceIn', // Tipo de transición para la entrada
+        sonido: true // Reproducir sonido
+      });
+    });
+  </script>
+</body>
+</html>
+```
 
 ## Ventajas y Características Clave
 
