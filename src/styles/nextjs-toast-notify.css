@@ -39,7 +39,7 @@
 }
 
 .toast-nextjs {
-  width: 350px;
+  /*width: 350px;*/
   min-height: 3.5em;
   border-radius: 6px;
   background: #fff;
@@ -93,13 +93,15 @@
 .toast-content .message {
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 .message .text {
   font-size: 17px;
   font-weight: 400;
+  text-align: center;
   color: #666666;
+  line-height: normal;
 }
 
 .toast-nextjs .close-toast {
@@ -329,4 +331,41 @@
 /* Clase para aplicar la animación de salida */
 .animate-topToBottomBounce {
   animation: topToBottomBounce 0.6s ease-in forwards;
+}
+
+@media (min-width: 280px) and (max-width: 380px) {
+  .toast-container {
+    width: 100%;
+  }
+  .toast-container.top-right {
+    right: 0px;
+  }
+  .toast-container.top-left {
+    left: 0px;
+  }
+  .toast-container.bottom-left {
+    left: 0px;
+  }
+  .toast-container.bottom-right {
+    right: 0px;
+  }
+}
+
+@media (min-width: 381px) and (max-width: 480px) {
+  .toast-container {
+    width: 95%;
+  }
+  .toast-container.top-right {
+    right: 0px;
+  }
+  .toast-container.top-left {
+    left: 0px;
+  }
+
+  .toast-container.bottom-right {
+    right: 0px;
+  }
+  .toast-container.bottom-left {
+    left: 10px;
+  }
 }
