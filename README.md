@@ -150,7 +150,7 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
 - **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
-- **Licencia abierta:** Publicado bajo licencia ISC, permitiendo su uso en proyectos comerciales y personales sin restricciones.
+- **Licencia abierta:** Publicado bajo licencia MIT, permitiendo su uso en proyectos comerciales y personales sin restricciones.
 - **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
 
 ## API
@@ -230,7 +230,7 @@ en GitHub: https://github.com/urian121/nextjs-toast-notify
 
 ## License
 
-Licensed under ISC
+Licensed under MIT
 
 [![GitHub](https://img.shields.io/badge/GitHub-urian121/nextjs--toast--notify-181717?logo=github&style=flat-square)](https://github.com/urian121/nextjs-toast-notify)
 
