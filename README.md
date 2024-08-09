@@ -5,6 +5,7 @@
 [![npm](https://img.shields.io/npm/dt/nextjs-toast-notify.svg)](https://www.npmjs.com/package/nextjs-toast-notify)
 
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
+👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
 
 **Nextjs Toast Notify** es un paquete npm imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js. Ideal para proporcionar retroalimentación visual clara y efectiva sin interrumpir la experiencia del usuario, este paquete te permite mostrar mensajes de alerta, éxito, error y mucho más de manera **personalizable y elegante.** Con una configuración intuitiva y opciones flexibles, **Nextjs Toast Notify** te ofrece la herramienta perfecta para mantener a tus usuarios informados y mejorar la interacción con tu aplicación.
 
@@ -25,10 +26,10 @@ Puedes instalar el paquete usando npm:
 
 ## Casos de uso:
 
-### Implementar Loading Request en el envío de un formulario
+### Integrar Next.js Toast Notify en una aplicación ToDo con React.js
 
-![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
-👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
+![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/ToDoAppConReactY-nextjs-toast-notify.gif)
+👉 [Ver Código en GitHub](https://github.com/urian121/Create-ToDo-List-App-with-ReactJS)
 
 ## Ejemplo Práctico utilizando React.js
 
@@ -39,7 +40,7 @@ import "nextjs-toast-notify/dist/nextjs-toast-notify.css";
 function App() {
   const handleShowToastCenter = () => {
     toast.success("¡La operación se realizó con éxito!", {
-      duration: 15000,
+      duration: 4000,
       progress: true,
       position: "bottom-center",
       transition: "bounceIn",
