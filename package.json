@@ -18,6 +18,8 @@
     "dev": "vite"
   },
   "keywords": [
+    "nextjs-toast-notify",
+    "alertas",
     "toast",
     "notifications",
     "nextjs",
@@ -32,7 +34,19 @@
     "push",
     "alert",
     "react-components",
-    "toastify"
+    "toastify",
+    "sweetalert",
+    "user-feedback",
+    "ui-notifications",
+    "notification-system",
+    "toast-messages",
+    "alert-notifications",
+    "react-toast",
+    "web-notifications",
+    "custom-toasts",
+    "notification-component",
+    "react-ui",
+    "app-notifications"
   ],
   "author": "urian viera",
   "license": "MIT",

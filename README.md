@@ -7,7 +7,7 @@
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
 
-**Nextjs Toast Notify** es un paquete npm imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js. Ideal para proporcionar retroalimentación visual clara y efectiva sin interrumpir la experiencia del usuario, este paquete te permite mostrar mensajes de alerta, éxito, error y mucho más de manera **personalizable y elegante.** Con una configuración intuitiva y opciones flexibles, **Nextjs Toast Notify** te ofrece la herramienta perfecta para mantener a tus usuarios informados y mejorar la interacción con tu aplicación.
+**Nextjs Toast Notify** es el paquete npm que transformará cómo manejas las notificaciones en tus aplicaciones web. Diseñado para ofrecer una experiencia de usuario sin interrupciones, **Nextjs Toast Notify** permite agregar alertas emergentes (toasts) con una estética moderna y personalizable. **Nextjs Toast Notify** también destaca por su configuración intuitiva y opciones flexibles, que te permiten adaptar las notificaciones a tus necesidades específicas con facilidad.
 
 ## ¿Para Qué Fue Creado?
 
@@ -15,7 +15,7 @@ Este paquete fue creado para simplificar la implementación de notificaciones en
 
 ## ¿Qué necesidad resuelve?
 
-Este paquete responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual. En muchas aplicaciones web, es crucial tener una forma efectiva de informar al usuario sobre eventos importantes, resultados de acciones o errores. **Nextjs Toast Notify** proporcionan una manera elegante y no invasiva de cumplir con esta función.
+Este paquete responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual. En muchas aplicaciones web, es crucial tener una forma efectiva de informar al usuario sobre eventos importantes, resultados de acciones o errores.
 
 ## Instalación
 
@@ -44,7 +44,7 @@ function App() {
       progress: true,
       position: "bottom-center",
       transition: "bounceIn",
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-apple"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>',
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>',
       sonido: true,
     });
   };
@@ -54,6 +54,11 @@ function App() {
 
 export default App;
 ```
+
+### Integrar Next.js Toast Notify en una aplicación de Next.js
+
+![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/like-dislike-nextjs-toast-notify.gif)
+👉 [Ver Código en GitHub](https://github.com/urian121/sistema-like-dislikes-con-nextjs-y-nextjs-toast-notify)
 
 # Tipos de Notificaciones
 
