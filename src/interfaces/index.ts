@@ -9,10 +9,16 @@ export interface ToastOptions {
   progress?: boolean;
 
   /** Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right'). */
-  position?: 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+  position?:
+    | "top-left"
+    | "top-center"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right";
 
-  /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'bottomToTopBounce', 'fadeIn'. */
-  transition?: 'bounceIn' | 'fadeIn' | 'bottomToTopBounce';
+  /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'bottomToTopBounce', 'bounceInDown'. */
+  transition?: "bounceIn" | "fadeIn" | "bottomToTopBounce" | "bounceInDown";
 
   /** Icono personalizado para la notificación (opcional). */
   icon?: string;
@@ -29,5 +35,5 @@ export interface ToastProps {
   message: string;
 
   /** Tipo de notificación. Opciones: 'success', 'error', 'warning', 'info' (default: 'success'). */
-  type?: 'success' | 'error' | 'warning' | 'info';
+  type?: "success" | "error" | "warning" | "info";
 }

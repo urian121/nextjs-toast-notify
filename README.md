@@ -151,7 +151,7 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
 - **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
 - **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
 - **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `bottomToTopBounce`).
+- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `bottomToTopBounce`, `bounceInDown`).
 - **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
@@ -203,7 +203,7 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
 
 - **`transition`**:
 
-  - **Tipo**: `'fadeIn' | 'bounceIn' | 'bottomToTopBounce'`
+  - **Tipo**: `'fadeIn' | 'bounceIn' | 'bottomToTopBounce' | 'bounceInDown'`
   - **Descripción**: El efecto de animación de entrada o salida para la notificación.
   - **Valor por defecto**: `'fadeIn'`
 
