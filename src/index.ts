@@ -1,7 +1,9 @@
 import "./styles/nextjs-toast-notify.css";
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
-// Importar el sonido
+/**
+ * El sonido que se reproduce cuando se muestra una notificación.
+ */
 import chasquidoSound from "./sonidos/chasquido.mp3";
 
 /**
@@ -50,17 +52,19 @@ const getToastContainer = (position: string): HTMLElement => {
 
 /**
  * Muestra una notificación de toast con los parámetros especificados.
+ * 
  * @param props - Propiedades de la notificación.
  * @param props.message - Mensaje a mostrar en la notificación.
- * @param props.type - Tipo de notificación. Opciones: 'success', 'error', 'warning', 'info' (default: 'success').
+ * @param props.type - Tipo de notificación. Opciones: 'success', 'error', 'warning', 'info' (por defecto: 'success').
  * @param options - Opciones adicionales para la notificación.
- * @param options.duration - Duración en milisegundos que se mostrará la notificación (default: 5000).
- * @param options.progress - Muestra una barra de progreso (default: true).
- * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right').
- * @param options.transition - Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'fadeIn', 'bottomToTopBounce', 'bounceInDown'.
+ * @param options.duration - Duración en milisegundos que se mostrará la notificación (por defecto: 5000).
+ * @param options.progress - Muestra una barra de progreso (por defecto: true).
+ * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (por defecto: 'top-right').
+ * @param options.transition - Tipo de transición para la entrada (por defecto: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'bottomToTopBounce', 'bounceInDown'.
  * @param options.icon - Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
  * @param options.sonido - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
+
 const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   const { message, type = "success" } = props;
   const {
@@ -71,8 +75,9 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     icon,
     sonido,
   } = options;
+  
+  // Usa la función getToastContainer para obtener el contenedor
   const toastContainer = getToastContainer(position);
-
   const toast = document.createElement("div");
   toast.classList.add("toast-nextjs", type);
 
@@ -80,16 +85,11 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
   toast.style.setProperty("--progress-duration", `${duration}ms`);
 
   // Añadir clase de animación de entrada
-  if (transition) {
-    toast.classList.add(`animate-${transition}`);
-  } else {
-    toast.classList.add(`animate-fadeIn`);
-  }
+  toast.classList.add(`animate-${transition || "fadeIn"}`);
 
   // Iconos predeterminados según el tipo de toast
   const tipos_iconos = {
-    success:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>',
+    success:'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>',
     error:
       '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>',
     warning:
@@ -124,15 +124,21 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     ${progress ? '<div class="progress"></div>' : ""}
   `;
 
-  // Añadir el toast al contenedor
+  /**
+   * Anexar la notificación al contenedor de notificaciones.
+   */
   toastContainer.appendChild(toast);
 
-  // Reproducir sonido toast
+/**
+ * Reproduce un sonido cuando se muestra la notificación.
+ */
   if (sonido) {
     playSound();
   }
 
-  // Asegurarse de que la animación se aplique después de agregar al DOM
+  /**
+   * Programar la animación de entrada de la notificación, asegurarse de que la animación se aplique después de agregar al DOM
+   */
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       toast.classList.add("toast-active");
@@ -143,11 +149,15 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     });
   });
 
-  // Añadir evento de cierre
+  /**
+   * Programar el cierre de la notificación.
+   */
   const closeButton = toast.querySelector(".close-toast") as HTMLElement;
   closeButton.addEventListener("click", () => closeToast(toast));
 
-  // Programar el cierre después de la duración especificada
+  /**
+   * Programar el cierre después de la duración especificada
+   */
   setTimeout(() => {
     closeToast(toast);
   }, duration);
@@ -163,10 +173,14 @@ const closeToast = (toast: HTMLElement) => {
     progress.classList.remove("toast-active");
   }
 
-  // Añadir la clase de animación de salida
+  /**
+   * Añadir la clase de animación de salida
+   */
   toast.classList.remove("toast-active");
 
-  // Verificar y aplicar la animación de salida
+  /**
+   * Verificar y aplicar la animación de salida
+   */
   if (toast.classList.contains("animate-fadeIn")) {
     toast.classList.remove("animate-fadeIn");
     toast.classList.add("animate-fadeOut");
@@ -179,16 +193,24 @@ const closeToast = (toast: HTMLElement) => {
   } else if (toast.classList.contains("animate-bounceInDown")) {
     toast.classList.remove("animate-bounceInDown");
     toast.classList.add("animate-bounceOutUp");
+  } else if (toast.classList.contains("animate-swingInverted")) {
+    toast.classList.remove("animate-swingInverted");
+    toast.classList.add("animate-swingOut");
+  } else if (toast.classList.contains("animate-popUp")) {
+    toast.classList.remove("animate-popUp");
+    toast.classList.add("animate-popUpOut");
   }
 
-  // Eliminar el toast después de la duración de la animación de salida
+  /**
+   * Eliminar el toast después de la duración de la animación de salida
+   */
   setTimeout(() => {
     toast.remove();
     removeToastContainerIfEmpty();
   }, 500); // Ajusta este tiempo a la duración de tu animación de salida
 };
 
-// Métodos estáticos para diferentes tipos de notificaciones
+
 /**
  * Crea un método para mostrar notificaciones de un tipo específico.
  * @param type - Tipo de notificación ('success', 'error', 'warning', 'info').
@@ -200,7 +222,9 @@ const createToastMethod = (type: "success" | "error" | "warning" | "info") => {
   };
 };
 
-// Objeto de métodos de notificación
+/**
+ * Objeto de métodos para mostrar notificaciones de diferentes tipos.
+ */
 const toast = {
   success: createToastMethod("success"),
   error: createToastMethod("error"),

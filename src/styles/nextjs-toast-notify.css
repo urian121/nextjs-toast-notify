@@ -45,7 +45,6 @@
   padding: 8px 15px 8px 8px;
   box-shadow: 0 6px 20px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  /* opacity: 0; */
   transform: translateY(-20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: all;
@@ -203,7 +202,7 @@
   transform: rotate(-45deg);
 }
 
-/* Fade in animation */
+/* fadeIn animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -215,7 +214,7 @@
   }
 }
 
-/* Fade out animation */
+/* Animacion de salidad para la fadeIn */
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -235,7 +234,7 @@
   animation: fadeOut 0.5s forwards;
 }
 
-/* Bounce in animation */
+/* BounceIn animation */
 @keyframes bounceIn {
   0% {
     transform: scale(0) translateY(-50%);
@@ -254,7 +253,7 @@
   }
 }
 
-/* Bounce out animation */
+/* BounceOut animacion de salidad para la bounceIn */
 @keyframes bounceOut {
   0% {
     transform: scale(1) translateY(0);
@@ -286,7 +285,7 @@
   animation: bounceOut 0.6s forwards;
 }
 
-/* bounceInFromBottom: Se usa para la entrada del toast, haciendo que aparezca desde la parte inferior con un efecto de rebote. */
+/* bottomToTopBounce animacion de entrada */
 @keyframes bottomToTopBounce {
   0% {
     opacity: 0;
@@ -305,7 +304,7 @@
   }
 }
 
-/* topToBottomBounce: Se usa para la salida del toast, haciendo que desaparezca hacia la parte inferior con un efecto de rebote. */
+/* topToBottomBounce, animacion de salida del toast con respecto a la entrada bottomToTopBounce. */
 @keyframes topToBottomBounce {
   0% {
     opacity: 1;
@@ -331,6 +330,7 @@
   animation: topToBottomBounce 0.6s ease-in forwards;
 }
 
+/** bounceInDown animacion de entrada */
 @keyframes bounceInDown {
   0% {
     opacity: 0;
@@ -351,6 +351,7 @@
   }
 }
 
+/** bounceOutUp animacion de salida, que corresponde a bounceInDown */
 @keyframes bounceOutUp {
   0% {
     opacity: 1;
@@ -382,6 +383,105 @@
 .animate-bounceOutUp {
   animation: bounceOutUp 0.6s forwards;
 }
+
+/** Animacion de entrada swingInverted */
+@keyframes swingInverted {
+  0% {
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Comienza en su posición original */
+  }
+  20% {
+    transform: translateY(-5px) rotate3d(0, 0, 1, -5deg); /* Baja ligeramente y se inclina a la derecha */
+  }
+  40% {
+    transform: translateY(-3px) rotate3d(0, 0, 1, 3deg);  /* Sube un poco y se inclina a la izquierda */
+  }
+  60% {
+    transform: translateY(-2px) rotate3d(0, 0, 1, -2deg); /* Baja un poco y se inclina a la derecha */
+  }
+  80% {
+    transform: translateY(-1px) rotate3d(0, 0, 1, 1deg);  /* Sube ligeramente y se inclina a la izquierda */
+  }
+  100% {
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg);  /* Finaliza en posición neutral */
+  }
+}
+
+/*** Animacion de salida para swingInverted */
+@keyframes swingOut {
+  0% {
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Comienza en su posición original */
+  }
+  20% {
+    transform: translateY(5px) rotate3d(0, 0, 1, 5deg); /* Se inclina a la derecha */
+  }
+  40% {
+    transform: translateY(3px) rotate3d(0, 0, 1, -3deg); /* Se inclina a la izquierda */
+  }
+  60% {
+    transform: translateY(2px) rotate3d(0, 0, 1, 2deg); /* Se inclina a la derecha */
+  }
+  80% {
+    transform: translateY(1px) rotate3d(0, 0, 1, -1deg); /* Se inclina a la izquierda */
+  }
+  100% {
+    transform: translateY(100px) rotate3d(0, 0, 1, 0deg); /* Desplazado hacia abajo y fuera de vista */
+    opacity: 0;
+  }
+}
+
+.animate-swingInverted {
+  transform-origin: top center;
+  animation: swingInverted 0.5s ease-in-out both;
+}
+
+.animate-swingOut {
+  transform-origin: top center;
+  animation: swingOut 0.5s ease-in-out forwards;
+}
+
+
+/** Animacion de entrada */
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30%);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  80% {
+    transform: scale(0.95) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/** Animacion de salida para popUp */
+@keyframes popUpOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  20% {
+    transform: scale(1.05) translateY(-10%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) translateY(50%);
+  }
+}
+
+.animate-popUp {
+  animation: popUp 0.5s forwards;
+}
+
+.animate-popUpOut {
+  animation: popUpOut 0.5s forwards;
+}
+
 
 @media (min-width: 280px) and (max-width: 380px) {
   .toast-container {

@@ -44,7 +44,7 @@ function App() {
       progress: true,
       position: "bottom-center",
       transition: "bounceIn",
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>',
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>',
       sonido: true,
     });
   };
@@ -134,6 +134,7 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
           duration: 3000, // Duración de la notificación en ms
           position: "top-right", // Posición de la notificación
           transition: "bounceIn", // Tipo de transición para la entrada
+          icon: "",
           sonido: true, // Reproducir sonido
         });
       });
@@ -151,7 +152,7 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
 - **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
 - **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
 - **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `bottomToTopBounce`, `bounceInDown`).
+- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `swingInverted`, `popUp`, `bottomToTopBounce`, `bounceInDown`).
 - **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
@@ -203,7 +204,7 @@ Las opciones para personalizar las notificaciones se pueden pasar como el segund
 
 - **`transition`**:
 
-  - **Tipo**: `'fadeIn' | 'bounceIn' | 'bottomToTopBounce' | 'bounceInDown'`
+  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'bottomToTopBounce' | 'bounceInDown'`
   - **Descripción**: El efecto de animación de entrada o salida para la notificación.
   - **Valor por defecto**: `'fadeIn'`
 
