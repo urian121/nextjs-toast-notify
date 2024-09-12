@@ -393,16 +393,16 @@
     transform: translateY(-5px) rotate3d(0, 0, 1, -5deg); /* Baja ligeramente y se inclina a la derecha */
   }
   40% {
-    transform: translateY(-3px) rotate3d(0, 0, 1, 3deg);  /* Sube un poco y se inclina a la izquierda */
+    transform: translateY(-3px) rotate3d(0, 0, 1, 3deg); /* Sube un poco y se inclina a la izquierda */
   }
   60% {
     transform: translateY(-2px) rotate3d(0, 0, 1, -2deg); /* Baja un poco y se inclina a la derecha */
   }
   80% {
-    transform: translateY(-1px) rotate3d(0, 0, 1, 1deg);  /* Sube ligeramente y se inclina a la izquierda */
+    transform: translateY(-1px) rotate3d(0, 0, 1, 1deg); /* Sube ligeramente y se inclina a la izquierda */
   }
   100% {
-    transform: translateY(0) rotate3d(0, 0, 1, 0deg);  /* Finaliza en posición neutral */
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Finaliza en posición neutral */
   }
 }
 
@@ -438,7 +438,6 @@
   transform-origin: top center;
   animation: swingOut 0.5s ease-in-out forwards;
 }
-
 
 /** Animacion de entrada */
 @keyframes popUp {
@@ -481,7 +480,6 @@
 .animate-popUpOut {
   animation: popUpOut 0.5s forwards;
 }
-
 
 @media (min-width: 280px) and (max-width: 380px) {
   .toast-container {

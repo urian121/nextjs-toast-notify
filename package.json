@@ -20,7 +20,7 @@
   "homepage": "https://www.nextjstoastnotify.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/urian121/web-nextjs-toast-notify"
+    "url": "https://github.com/urian121/nextjs-toast-notify"
   },
   "keywords": [
     "nextjs-toast-notify",
@@ -56,7 +56,7 @@
   "author": "urian viera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/urian121/web-nextjs-toast-notify/issues"
+    "url": "https://github.com/urian121/nextjs-toast-notify/issues"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
