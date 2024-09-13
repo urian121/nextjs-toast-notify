@@ -58,6 +58,13 @@
   "bugs": {
     "url": "https://github.com/urian121/nextjs-toast-notify/issues"
   },
+  "contributors": [
+    {
+      "name": "Braudin Laya",
+      "email": "freelance@braudin.com",
+      "url": "https://github.com/Braudin"
+    }
+  ],
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.1",
     "typescript": "^5.5.3",
