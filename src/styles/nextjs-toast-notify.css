@@ -1,4 +1,5 @@
 .toast-container {
+  min-width: 300px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -40,7 +41,7 @@
 }
 
 .toast-nextjs {
-  min-height: 3.5em;
+  min-height: 2.5em;
   border-radius: 6px;
   background: #fff;
   padding: 8px 15px 8px 8px;
@@ -486,35 +487,29 @@
   .toast-container {
     width: 100%;
   }
-  .toast-container.top-right {
-    right: 0px;
-  }
-  .toast-container.top-left {
-    left: 0px;
-  }
-  .toast-container.bottom-left {
-    left: 0px;
-  }
+  /* Para todos estos casos tendran la misma posicion */
+  .toast-container.top-right,
+  .toast-container.top-left,
+  .toast-container.bottom-left,
   .toast-container.bottom-right {
-    right: 0px;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
+
 
 @media (min-width: 381px) and (max-width: 480px) {
   .toast-container {
     width: 95%;
   }
-  .toast-container.top-right {
-    right: 0px;
-  }
-  .toast-container.top-left {
-    left: 0px;
-  }
-
-  .toast-container.bottom-right {
-    right: 0px;
-  }
+  /* Para todos estos casos tendran la misma posicion */
+  .toast-container.top-right,
+  .toast-container.top-left,
+  .toast-container.bottom-right,
   .toast-container.bottom-left {
-    left: 10px;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%);
   }
 }
