@@ -53,10 +53,15 @@
     "react-ui",
     "app-notifications"
   ],
-  "author": "urian viera",
+  "author": {
+    "name": "Urian Viera",
+    "email": "urianwebdeveloper@gmail.com",
+    "url": "https://www.urianviera.com"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/urian121/nextjs-toast-notify/issues"
+    "url": "https://github.com/urian121/nextjs-toast-notify/issues",
+    "email": "urianwebdeveloper@gmail.com"
   },
   "contributors": [
     {
