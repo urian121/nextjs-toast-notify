@@ -2,7 +2,7 @@
  * Opciones para configurar una notificación de toast.
  */
 export interface ToastOptions {
-  /** Duración en milisegundos que se mostrará la notificación (default: 5000). */
+  /** Duración en milisegundos que se mostrará la notificación (default: 8000). */
   duration?: number;
 
   /** Muestra una barra de progreso (default: true). */
