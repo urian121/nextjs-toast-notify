@@ -23,6 +23,10 @@ export default defineConfig({
     viteStaticCopy({
       targets: [
         {
+          src: 'src/styles/nextjs-toast-notify.css',
+          dest: 'styles',
+        },
+        {
           src: 'src/sonidos/*',
           dest: 'sonidos',
         },

@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "build": "vite build && npm run rename-css",
-    "rename-css": "mv dist/style.css dist/nextjs-toast-notify.css",
+    "rename-css": "mv dist/style.css dist/styles/nextjs-toast-notify.css",
     "dev": "vite"
   },
   "homepage": "https://www.nextjstoastnotify.com",
