@@ -118,14 +118,14 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
     <!-- Incluir el CSS del paquete -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.27.0/dist/nextjs-toast-notify.css"
+      href="https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.31.0/dist/styles/nextjs-toast-notify.css"
     />
   </head>
   <body>
     <button id="show-toast">Show Toast</button>
 
     <script type="module">
-      import { toast } from "https://unpkg.com/nextjs-toast-notify@1.27.0/dist/index.js";
+      import { toast } from "https://unpkg.com/nextjs-toast-notify@1.31.0/dist/nextjs-toast-notify.js";
 
       document.getElementById("show-toast").addEventListener("click", () => {
         toast.success("Hola a todos los Devs!", {
