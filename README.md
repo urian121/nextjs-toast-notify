@@ -37,7 +37,7 @@ Puedes instalar el paquete usando npm:
 import { toast } from "nextjs-toast-notify";
 
 function App() {
-  const handleShowToastCenter = () => {
+  const handleShowToast = () => {
     toast.success("¡La operación se realizó con éxito!", {
       duration: 5000,
       progress: true,
@@ -48,7 +48,7 @@ function App() {
     });
   };
 
-  return <button onClick={handleShowToastCenter}>Top center</button>;
+  return <button onClick={handleShowToast}>Top center</button>;
 }
 
 export default App;
@@ -115,17 +115,12 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nextjs Toast Notify con CDN</title>
-    <!-- Incluir el CSS del paquete -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.32.0/dist/styles/nextjs-toast-notify.css"
-    />
   </head>
   <body>
     <button id="show-toast">Show Toast</button>
 
     <script type="module">
-      import { toast } from "https://unpkg.com/nextjs-toast-notify@1.32.0/dist/nextjs-toast-notify.js";
+      import { toast } from "https://unpkg.com/nextjs-toast-notify@1.33.0/dist/nextjs-toast-notify.js";
 
       document.getElementById("show-toast").addEventListener("click", () => {
         toast.success("Hola a todos los Devs!", {
