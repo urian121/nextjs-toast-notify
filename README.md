@@ -35,7 +35,6 @@ Puedes instalar el paquete usando npm:
 
 ```jsx
 import { toast } from "nextjs-toast-notify";
-import "nextjs-toast-notify/dist/nextjs-toast-notify.css";
 
 function App() {
   const handleShowToastCenter = () => {
@@ -75,7 +74,6 @@ Para mostrar notificaciones de un tipo específico, solo necesitas especificar e
 
 ```jsx
 import { toast } from "nextjs-toast-notify";
-import "nextjs-toast-notify/dist/nextjs-toast-notify.css";
 
 function App() {
   const handleShowSuccessToast = () => {
