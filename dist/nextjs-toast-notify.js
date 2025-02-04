@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href =
-      "https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.34.0/dist/styles/nextjs-toast-notify.css";
+      "https://cdn.jsdelivr.net/npm/nextjs-toast-notify@1.35.0/dist/styles/nextjs-toast-notify.css";
     document.head.appendChild(link);
   }
 });
