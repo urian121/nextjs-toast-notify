@@ -189,7 +189,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `8000`
   - **Ejemplo**:
     ```jsx
-    toast.success("¡Operación exitosa!", { duration: 5000 }); // Duración de 5 segundos
+    toast.success("¡Operación exitosa!", { 
+      duration: 5000
+    }); // Duración de 5 segundos
     ```
 
 - **`progress`**:
@@ -199,7 +201,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `true`
   - **Ejemplo**:
     ```jsx
-    toast.info("Información importante", { progress: false }); // Desactiva la barra de progreso
+    toast.info("Información importante", { 
+      progress: false
+    }); // Desactiva la barra de progreso
     ```
 
 - **`position`**:
@@ -209,7 +213,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `'top-right'`
   - **Ejemplo**:
     ```jsx
-    toast.warning("Advertencia", { position: 'bottom-left' }); // Muestra en la esquina inferior izquierda
+    toast.warning("Advertencia", { 
+      position: 'bottom-left'
+    }); // Muestra en la esquina inferior izquierda
     ```
 
 - **`transition`**:
@@ -219,7 +225,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `'fadeIn'`
   - **Ejemplo**:
     ```jsx
-    toast.error("Error en la operación", { transition: 'bounceIn' }); // Efecto de rebote
+    toast.error("Error en la operación", { 
+      transition: 'bounceIn' 
+    }); // Efecto de rebote
     ```
 
 - **`icon`**:
@@ -228,7 +236,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
   - **Ejemplo**:
     ```jsx
-    toast.success("¡Todo listo!", { icon: '🎉' }); // Usa un ícono personalizado
+    toast.success("¡Todo listo!", { 
+      icon: '🎉' 
+    }); // Usa un ícono personalizado
     ```
 
 - **`sound`**:
@@ -237,7 +247,9 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `false`
   - **Ejemplo**:
     ```jsx
-    toast.info("Tienes un nuevo mensaje", { sound: true }); // Reproduce sonido al mostrar la notificación
+    toast.info("Tienes un nuevo mensaje", { 
+      sound: true 
+    }); // Reproduce sonido al mostrar la notificación
     ```
 
 ### Ejemplo Completo
