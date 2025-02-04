@@ -13,7 +13,7 @@ export interface ToastOptions {
     /** Icono personalizado para la notificación (opcional). */
     icon?: string;
     /** Reproduce un sonido cuando se muestra la notificación (default: false). */
-    sonido?: boolean;
+    sound?: boolean;
 }
 /**
  * Propiedades para una notificación de toast.

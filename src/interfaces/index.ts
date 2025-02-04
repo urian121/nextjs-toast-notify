@@ -24,7 +24,7 @@ export interface ToastOptions {
   icon?: string;
 
   /** Reproduce un sonido cuando se muestra la notificación (default: false). */
-  sonido?: boolean;
+  sound?: boolean;
 }
 
 /**

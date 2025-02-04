@@ -38,7 +38,7 @@ const u =
         position: n = "top-right",
         transition: c = "fadeIn",
         icon: r,
-        sonido: l,
+        sound: l,
       } = A,
       g = I(n),
       V = document.createElement("div");

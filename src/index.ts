@@ -62,7 +62,7 @@ const getToastContainer = (position: string): HTMLElement => {
  * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (por defecto: 'top-right').
  * @param options.transition - Tipo de transición para la entrada (por defecto: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'bottomToTopBounce', 'bounceInDown'.
  * @param options.icon - Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
- * @param options.sonido - Indica si se debe reproducir un sonido con la notificación (opcional).
+ * @param options.sound - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
 
 const showToast = (props: ToastProps, options: ToastOptions = {}) => {
@@ -73,7 +73,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     position = "top-right",
     transition = "fadeIn",
     icon,
-    sonido,
+    sound,
   } = options;
   
   // Usa la función getToastContainer para obtener el contenedor
@@ -134,7 +134,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
 /**
  * Reproduce un sonido cuando se muestra la notificación.
  */
-  if (sonido) {
+  if (sound) {
     playSound();
   }
 
