@@ -30,7 +30,9 @@ const createToastContainer = (position: string): HTMLElement => {
  * Elimina el contenedor de notificaciones si está vacío.
  */
 const removeToastContainerIfEmpty = () => {
-  const toastContainer = document.querySelector(".toast-container") as HTMLElement;
+  const toastContainer = document.querySelector(
+    ".toast-container"
+  ) as HTMLElement;
   if (toastContainer && !toastContainer.querySelector(".toast-nextjs")) {
     toastContainer.remove();
   }
@@ -39,11 +41,13 @@ const removeToastContainerIfEmpty = () => {
 /**
  * Obtiene el contenedor de notificaciones para la posición especificada.
  * Si no existe, se crea uno nuevo.
- * @param position - La posición del contenedor ('top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right').
+ * @param position - La posición del contenedor ('top-left', 'top-center', 'top-right', 'middle-left', 'middle-center', 'middle-right', 'bottom-left', 'bottom-center', 'bottom-right').
  * @returns El contenedor de notificaciones.
  */
 const getToastContainer = (position: string): HTMLElement => {
-  let container = document.querySelector(`.toast-container.${position}`) as HTMLElement;
+  let container = document.querySelector(
+    `.toast-container.${position}`
+  ) as HTMLElement;
   if (!container) {
     container = createToastContainer(position);
   }
@@ -52,7 +56,7 @@ const getToastContainer = (position: string): HTMLElement => {
 
 /**
  * Muestra una notificación de toast con los parámetros especificados.
- * 
+ *
  * @param props - Propiedades de la notificación.
  * @param props.message - Mensaje a mostrar en la notificación.
  * @param props.type - Tipo de notificación. Opciones: 'success', 'error', 'warning', 'info' (por defecto: 'success').
@@ -75,7 +79,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
     icon,
     sound,
   } = options;
-  
+
   // Usa la función getToastContainer para obtener el contenedor
   const toastContainer = getToastContainer(position);
   const toast = document.createElement("div");
@@ -95,8 +99,7 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
       '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>',
     warning:
       '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
-    info:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
+    info: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>',
   };
 
   // Determinar el ícono a usar
@@ -131,9 +134,9 @@ const showToast = (props: ToastProps, options: ToastOptions = {}) => {
    */
   toastContainer.appendChild(toast);
 
-/**
- * Reproduce un sonido cuando se muestra la notificación.
- */
+  /**
+   * Reproduce un sonido cuando se muestra la notificación.
+   */
   if (sound) {
     playSound();
   }
@@ -211,7 +214,6 @@ const closeToast = (toast: HTMLElement) => {
     removeToastContainerIfEmpty();
   }, 500); // Ajusta este tiempo a la duración de tu animación de salida
 };
-
 
 /**
  * Crea un método para mostrar notificaciones de un tipo específico.
