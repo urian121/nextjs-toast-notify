@@ -8,17 +8,26 @@ export interface ToastOptions {
   /** Muestra una barra de progreso (default: true). */
   progress?: boolean;
 
-  /** Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right'). */
+  /** Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'middle-left', 'middle-center', 'middle-right', 'bottom-left', 'bottom-center', 'bottom-right' (default: 'top-right'). */
   position?:
     | "top-left"
     | "top-center"
     | "top-right"
+    | "middle-left"
+    | "middle-center"
+    | "middle-right"
     | "bottom-left"
     | "bottom-center"
     | "bottom-right";
 
   /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'bottomToTopBounce', 'bounceInDown'. */
-  transition?:  "fadeIn" | "swingInverted" | "bounceIn" | "popUp" | "bottomToTopBounce" | "bounceInDown";
+  transition?:
+    | "fadeIn"
+    | "swingInverted"
+    | "bounceIn"
+    | "popUp"
+    | "bottomToTopBounce"
+    | "bounceInDown";
 
   /** Icono personalizado para la notificación (opcional). */
   icon?: string;

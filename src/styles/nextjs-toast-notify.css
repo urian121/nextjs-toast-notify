@@ -40,6 +40,21 @@
   right: 30px;
 }
 
+.toast-container.middle-left {
+  top: 125px;
+  left: 30px;
+}
+
+.toast-container.middle-center {
+  top: 125px;
+  left: 50%;
+}
+
+.toast-container.middle-right {
+  top: 125px;
+  right: 30px;
+}
+
 .toast-nextjs {
   min-height: 2.5em;
   border-radius: 6px;
@@ -70,7 +85,7 @@
   color: #fff;
   font-size: 20px;
   border-radius: 50%;
-  animation: pulse 1.0s ease-in-out 1;
+  animation: pulse 1s ease-in-out 1;
 }
 
 /* Clave para animación de latidos */
@@ -159,7 +174,7 @@
 }
 
 .toast-nextjs .progress:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -189,7 +204,7 @@
 
 .close-toast::before,
 .close-toast::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   height: 14px;
@@ -497,7 +512,6 @@
     transform: translate(-50%);
   }
 }
-
 
 @media (min-width: 381px) and (max-width: 480px) {
   .toast-container {
