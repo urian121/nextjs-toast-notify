@@ -65,7 +65,7 @@ const getToastContainer = (position: string): HTMLElement => {
  * @param options.sound - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
 
-const showToast = (props: ToastProps, options: ToastOptions = {}) => {
+const createToast = (props: ToastProps, options: ToastOptions = {}) => {
   const { message, type = "success" } = props;
   const {
     duration = 8000,
@@ -220,18 +220,18 @@ const closeToast = (toast: HTMLElement) => {
  */
 const createToastMethod = (type: "success" | "error" | "warning" | "info") => {
   return (message: string, options: ToastOptions = {}) => {
-    showToast({ message, type }, options);
+    createToast({ message, type }, options);
   };
 };
 
 /**
  * Objeto de métodos para mostrar notificaciones de diferentes tipos.
  */
-const toast = {
+const showToast = {
   success: createToastMethod("success"),
   error: createToastMethod("error"),
   warning: createToastMethod("warning"),
   info: createToastMethod("info"),
 };
 
-export { toast };
+export { showToast };

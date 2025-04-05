@@ -13,8 +13,9 @@
     "README.md"
   ],
   "scripts": {
-    "build": "vite build && npm run rename-css",
-    "rename-css": "mv dist/style.css dist/styles/nextjs-toast-notify.css",
+    "build": "vite build && cp dist/index.js dist/nextjs-toast-notify.js && cp dist/index.css dist/styles/nextjs-toast-notify.css && rm dist/index.css",
+    "minify-css": "npx clean-css-cli -o dist/styles/nextjs-toast-notify.css dist/styles/nextjs-toast-notify.css",
+    "postbuild": "npm run minify-css",
     "dev": "vite"
   },
   "homepage": "https://www.nextjstoastnotify.com",
@@ -71,12 +72,13 @@
     }
   ],
   "dependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^1.3.2",
     "typescript": "^5.5.3",
-    "vite": "^5.3.4"
+    "vite": "^6.2.5"
   },
   "devDependencies": {
+    "esbuild": "^0.25.2",
     "vite-plugin-dts": "^4.0.0-beta.1",
-    "vite-plugin-static-copy": "^1.0.6"
+    "vite-plugin-static-copy": "^2.3.0"
   }
 }

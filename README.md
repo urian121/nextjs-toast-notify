@@ -34,11 +34,11 @@ Puedes instalar el paquete usando npm:
 ## Ejemplo Práctico utilizando React.js
 
 ```jsx
-import { toast } from "nextjs-toast-notify";
+import { showToast } from "nextjs-toast-notify";
 
 function App() {
   const handleShowToast = () => {
-    toast.success("¡La operación se realizó con éxito!", {
+    showToast.success("¡La operación se realizó con éxito!", {
       duration: 5000,
       progress: true,
       position: "bottom-center",
@@ -65,19 +65,19 @@ Nextjs Toast Notify permite mostrar diferentes tipos de notificaciones según el
 
 ### Tipos de Toast
 
-- **✅`toast.success`**: Muestra un toast de éxito.
-- **❌`toast.error`**: Muestra un toast de error.
-- **⚠️`toast.warning`**: Muestra un toast de advertencia.
-- **⬆️`toast.info`**: Muestra un toast de información.
+- **✅`showToast.success`**: Muestra un toast de éxito.
+- **❌`showToast.error`**: Muestra un toast de error.
+- **⚠️`showToast.warning`**: Muestra un toast de advertencia.
+- **⬆️`showToast.info`**: Muestra un toast de información.
 
 ### Ejemplos de Uso
 
 ```jsx
-import { toast } from "nextjs-toast-notify";
+import { showToast } from "nextjs-toast-notify";
 
 function App() {
   const handleShowSuccessToast = () => {
-    toast.success("✅ ¡Operación exitosa!", {});
+    showToast.success("✅ ¡Operación exitosa!", {});
   };
 
   return <button onClick={handleShowSuccessToast}>Toast Success</button>;
@@ -99,7 +99,7 @@ Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesi
 Aquí tienes un ejemplo de cómo configurarlo:
 
 ```jsx
-toast.success("¡Operación exitosa!", {
+showToast.success("¡Operación exitosa!", {
   position: "top-right", // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
 });
 ```
@@ -120,10 +120,10 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
     <button id="show-toast">Show Toast</button>
 
     <script type="module">
-      import { toast } from "https://unpkg.com/nextjs-toast-notify@1.35.0/dist/nextjs-toast-notify.js";
+      import { showToast } from "https://unpkg.com/nextjs-toast-notify@1.35.0/dist/nextjs-toast-notify.js";
 
       document.getElementById("show-toast").addEventListener("click", () => {
-        toast.success("Hola a todos los Devs!", {
+        showToast.success("Hola a todos los Devs!", {
           duration: 5000, // Duración de la notificación en ms
           position: "top-right", // Posición de la notificación
           transition: "bounceIn", // Tipo de transición para la entrada
@@ -162,16 +162,16 @@ La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes c
 
 **Nextjs Toast Notify** expone métodos estáticos para los diferentes tipos de notificaciones:
 
-- **`toast.success(message: string, options?: ToastOptions): void`**  
+- **`showToast.success(message: string, options?: ToastOptions): void`**  
   Muestra una notificación de éxito.
 
-- **`toast.error(message: string, options?: ToastOptions): void`**  
+- **`showToast.error(message: string, options?: ToastOptions): void`**  
   Muestra una notificación de error.
 
-- **`toast.warning(message: string, options?: ToastOptions): void`**  
+- **`showToast.warning(message: string, options?: ToastOptions): void`**  
   Muestra una notificación de advertencia.
 
-- **`toast.info(message: string, options?: ToastOptions): void`**  
+- **`showToast.info(message: string, options?: ToastOptions): void`**  
   Muestra una notificación informativa.
 
 ### Opciones de Configuración
@@ -189,7 +189,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `8000`
   - **Ejemplo**:
     ```jsx
-    toast.success("¡Operación exitosa!", { 
+    showToast.success("¡Operación exitosa!", { 
       duration: 5000
     }); // Duración de 5 segundos
     ```
@@ -201,7 +201,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `true`
   - **Ejemplo**:
     ```jsx
-    toast.info("Información importante", { 
+    showToast.info("Información importante", { 
       progress: false
     }); // Desactiva la barra de progreso
     ```
@@ -213,7 +213,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `'top-right'`
   - **Ejemplo**:
     ```jsx
-    toast.warning("Advertencia", { 
+    showToast.warning("Advertencia", { 
       position: 'bottom-left'
     }); // Muestra en la esquina inferior izquierda
     ```
@@ -225,7 +225,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `'fadeIn'`
   - **Ejemplo**:
     ```jsx
-    toast.error("Error en la operación", { 
+    showToast.error("Error en la operación", { 
       transition: 'bounceIn' 
     }); // Efecto de rebote
     ```
@@ -236,7 +236,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
   - **Ejemplo**:
     ```jsx
-    toast.success("¡Todo listo!", { 
+    showToast.success("¡Todo listo!", { 
       icon: '🎉' 
     }); // Usa un ícono personalizado
     ```
@@ -247,7 +247,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Valor por defecto**: `false`
   - **Ejemplo**:
     ```jsx
-    toast.info("Tienes un nuevo mensaje", { 
+    showToast.info("Tienes un nuevo mensaje", { 
       sound: true 
     }); // Reproduce sonido al mostrar la notificación
     ```
@@ -255,11 +255,11 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
 ### Ejemplo Completo
 
 ```jsx
-import { toast } from "nextjs-toast-notify";
+import { showToast } from "nextjs-toast-notify";
 
 function App() {
   const mostrarNotificacion = () => {
-    toast.success("¡Operación exitosa!", {
+    showToast.success("¡Operación exitosa!", {
       duration: 4000,
       position: "top-center",
       transition: "bounceIn",
