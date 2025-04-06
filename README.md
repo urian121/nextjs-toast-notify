@@ -48,7 +48,7 @@ function App() {
     });
   };
 
-  return <button onClick={handleShowToast}>Top center</button>;
+  return <button onClick={handleShowToast}>Mostrar Toast</button>;
 }
 
 export default App;
@@ -117,7 +117,7 @@ export default App;
 
 ## Uso a través de CDN
 
-También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utilizando un enlace CDN. Sigue estos pasos:
+También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto utilizando un enlace CDN. Sigue estos pasos:
 
 ```html
 <!DOCTYPE html>
@@ -134,7 +134,7 @@ También puedes incluir `Nextjs Toast Notify` directamente en tu proyecto utiliz
       import { showToast } from "https://unpkg.com/nextjs-toast-notify@1.36.0/dist/nextjs-toast-notify.js";
 
       document.getElementById("show-toast").addEventListener("click", () => {
-        showToast.success("Hola a todos los Devs!", {
+        showToast.success("Hola a todos los Devs de JavaScript!", {
           duration: 5000, // Duración de la notificación en ms
           position: "top-right", // Posición de la notificación
           transition: "bounceIn", // Tipo de transición para la entrada
@@ -320,7 +320,7 @@ La notificación tiene una **duración de 4 segundos**, está **centrada en la p
 - **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
 
 
-### Únete y Contribuye
+## 🤝 Únete y Contribuye
 
 Si encuentras algún problema o tienes una idea para mejorar el paquete, por favor abre un issue o envía un pull request
 en GitHub: https://github.com/urian121/nextjs-toast-notify
