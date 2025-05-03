@@ -1,6 +1,6 @@
 {
   "name": "nextjs-toast-notify",
-  "version": "1.37.0",
+  "version": "1.38.0",
   "description": "Es un paquete npm moderno, intuitivo, flexible, liviano e imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js. Ideal para proporcionar retroalimentación visual clara y efectiva sin interrumpir la experiencia del usuario, este paquete te permite mostrar mensajes de alerta, éxito, error y mucho más de manera personalizable y elegante. Con una configuración intuitiva y opciones flexibles, Nextjs Toast Notify te ofrece la herramienta perfecta para mantener a tus usuarios informados y mejorar la interacción con tu aplicación.",
   "type": "module",
   "main": "dist/index.js",
@@ -71,12 +71,12 @@
       "url": "https://github.com/Braudin"
     }
   ],
-  "dependencies": { },
+  "dependencies": {},
   "devDependencies": {
-  "vite": "^6.3.4",
-  "@vitejs/plugin-react": "^1.3.2",
-  "typescript": "^5.5.3",
-  "vite-plugin-dts": "^4.0.0-beta.1",
-  "vite-plugin-static-copy": "^2.3.0"
-}
+    "vite": "^6.3.4",
+    "@vitejs/plugin-react": "^1.3.2",
+    "typescript": "^5.5.3",
+    "vite-plugin-dts": "^4.0.0-beta.1",
+    "vite-plugin-static-copy": "^2.3.0"
+  }
 }
