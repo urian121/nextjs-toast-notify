@@ -325,13 +325,13 @@ La notificación tiene una **duración de 4 segundos**, está **centrada en la p
 Si encuentras algún problema o tienes una idea para mejorar el paquete, por favor abre un issue o envía un pull request
 en GitHub: https://github.com/urian121/nextjs-toast-notify
 
-## Desarrollado por
+## 👨‍💻 Desarrollador
 
-- [Urian Viera](https://github.com/urian123)
-- [Portafolio](https://www.urianviera.com)
-- [Canal de Youtube](https://www.youtube.com/WebDeveloperUrianViera)
-- [¡Donar a través de PayPal!](https://www.paypal.com/donate/?hosted_button_id=4SV78MQJJH3VE)
-- [Email](mailto:urian1213viera@gmail.com)
+**Urian Viera**  
+🌐 [urianviera.com](https://www.urianviera.com)  
+📺 [YouTube](https://www.youtube.com/WebDeveloperUrianViera)  
+💌 [urian1213viera@gmail.com](mailto:urian1213viera@gmail.com)  
+☕ [¡Apóyame en PayPal!](https://www.paypal.com/donate/?hosted_button_id=4SV78MQJJH3VE)
 
 ## Copyright
 
