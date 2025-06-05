@@ -1,4 +1,13 @@
-import "./styles/nextjs-toast-notify.css";
+import css from "./styles/nextjs-toast-notify.css?inline";
+const injectStyles = () => {
+  const style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+};
+
+injectStyles();
+
+
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
 /**
@@ -234,4 +243,10 @@ const showToast = {
   info: createToastMethod("info"),
 };
 
+// Para uso con import (npm/module)
 export { showToast };
+
+// Exportar globalmente para uso con CDN
+if (typeof window !== 'undefined') {
+  (window as any).showToast = showToast;
+}

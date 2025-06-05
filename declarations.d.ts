@@ -3,3 +3,7 @@ declare module "*.mp3" {
     export default value;
   }
   
+declare module "*.css?inline" {
+  const css: string;
+  export default css;
+}

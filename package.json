@@ -1,21 +1,25 @@
 {
   "name": "nextjs-toast-notify",
   "version": "1.38.0",
-  "description": "Es un paquete npm moderno, intuitivo, flexible, liviano e imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js. Ideal para proporcionar retroalimentación visual clara y efectiva sin interrumpir la experiencia del usuario, este paquete te permite mostrar mensajes de alerta, éxito, error y mucho más de manera personalizable y elegante. Con una configuración intuitiva y opciones flexibles, Nextjs Toast Notify te ofrece la herramienta perfecta para mantener a tus usuarios informados y mejorar la interacción con tu aplicación.",
+  "description": "Es un paquete npm moderno, intuitivo, flexible, liviano e imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js.",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/nextjs-toast-notify.iife.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/nextjs-toast-notify.js"
+    },
+    "./nextjs-toast-notify.css": "./nextjs-toast-notify.css"
+  },
   "files": [
     "dist",
-    "styles",
     "sonidos",
     "README.md"
   ],
   "scripts": {
-    "build": "vite build && cp dist/index.js dist/nextjs-toast-notify.js && cp dist/index.css dist/styles/nextjs-toast-notify.css && rm dist/index.css",
-    "minify-css": "npx clean-css-cli -o dist/styles/nextjs-toast-notify.css dist/styles/nextjs-toast-notify.css",
-    "postbuild": "npm run minify-css",
+    "build": "vite build",
     "dev": "vite"
   },
   "homepage": "https://www.nextjstoastnotify.com",
@@ -71,11 +75,10 @@
       "url": "https://github.com/Braudin"
     }
   ],
-  "dependencies": {},
   "devDependencies": {
-    "vite": "^6.3.4",
     "@vitejs/plugin-react": "^1.3.2",
     "typescript": "^5.5.3",
+    "vite": "^6.3.4",
     "vite-plugin-dts": "^4.0.0-beta.1",
     "vite-plugin-static-copy": "^2.3.0"
   }

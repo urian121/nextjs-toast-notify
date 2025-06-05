@@ -126,13 +126,16 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nextjs Toast Notify con CDN</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/nextjs-toast-notify@1.39.0/dist/styles/nextjs-toast-notify.css"
+    />
   </head>
   <body>
     <button id="show-toast">Mostrar Toast</button>
 
-    <script type="module">
-      import { showToast } from "https://unpkg.com/nextjs-toast-notify@1.38.0/dist/nextjs-toast-notify.js";
-
+    <script src="https://unpkg.com/nextjs-toast-notify@1.38.0/dist/index.js"></script>
+    <script>
       document.getElementById("show-toast").addEventListener("click", () => {
         showToast.success("Hola a todos los Devs de JavaScript!", {
           duration: 5000, // Duración de la notificación en ms

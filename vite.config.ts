@@ -6,15 +6,16 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'nextjs-toast-notify',
-      formats: ['es'],
-      fileName: 'index',
+      name: 'NextjsToastNotify',
+      fileName: (format) => (format === 'es' ? 'index.es.js' : 'nextjs-toast-notify.js'),
+      formats: ['es', 'iife'],
     },
     rollupOptions: {
       output: {
-        entryFileNames: 'index.js',
+        entryFileNames: '[name].[format].js',
       },
     },
+    cssCodeSplit: false, // ✅ IMPORTANTE
   },
   plugins: [
     dts({
@@ -22,10 +23,6 @@ export default defineConfig({
     }),
     viteStaticCopy({
       targets: [
-        {
-          src: 'src/styles/nextjs-toast-notify.css',
-          dest: 'styles',
-        },
         {
           src: 'src/sonidos/*',
           dest: 'sonidos',
