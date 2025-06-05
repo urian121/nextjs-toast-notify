@@ -7,8 +7,8 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'NextjsToastNotify',
-      fileName: (format) => (format === 'es' ? 'index.es.js' : 'nextjs-toast-notify.js'),
-      formats: ['es', 'iife'],
+      fileName: (format) =>
+        format === 'es' ? 'nextjs-toast-notify.es.js' : 'nextjs-toast-notify.js',
     },
     rollupOptions: {
       output: {
