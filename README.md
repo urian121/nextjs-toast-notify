@@ -112,7 +112,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ## Uso a través de CDN
@@ -128,7 +127,7 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
     <title>Nextjs Toast Notify con CDN</title>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/nextjs-toast-notify@1.40.0/dist/styles/nextjs-toast-notify.css"
+      href="https://unpkg.com/nextjs-toast-notify@1.40.0/dist/nextjs-toast-notify.css"
     />
   </head>
   <body>
@@ -138,18 +137,17 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
     <script>
       document.getElementById("show-toast").addEventListener("click", () => {
         showToast.success("Hola a todos los Devs de JavaScript!", {
-          duration: 5000, // Duración de la notificación en ms
-          position: "top-right", // Posición de la notificación
-          transition: "bounceIn", // Tipo de transición para la entrada
+          duration: 5000,
+          position: "top-right",
+          transition: "bounceIn",
           icon: "",
-          sound: true, // Reproducir sonido
+          sound: true,
         });
       });
     </script>
   </body>
 </html>
 ```
-
 
 ## API de Nextjs Toast Notify
 
@@ -165,6 +163,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: Define la duración de la notificación en milisegundos.
   - **Valor por defecto**: `8000`
   - **Ejemplo**:
+
     ```jsx
     import { showToast } from "nextjs-toast-notify";
 
@@ -186,12 +185,13 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: Si se debe mostrar una barra de progreso para la notificación.
   - **Valor por defecto**: `true`
   - **Ejemplo**:
+
     ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
       const handleShowToast = () => {
-        showToast.info("¡Toast de información!", { 
+        showToast.info("¡Toast de información!", {
           progress: false, // Desactiva la barra de progreso
         });
       };
@@ -206,6 +206,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: Define la posición de la notificación en la pantalla.
   - **Valor por defecto**: `'top-right'`
   - **Ejemplo**:
+
     ```jsx
     import { showToast } from "nextjs-toast-notify";
 
@@ -228,13 +229,14 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Descripción**: El efecto de animación de entrada o salida para la notificación.
   - **Valor por defecto**: `'fadeIn'`
   - **Ejemplo**:
+
     ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
       const handleToastAnimationPopUp = () => {
-        showToast.error("!Toast con animación popUp!", { 
-          transition: 'popUp' 
+        showToast.error("!Toast con animación popUp!", {
+          transition: "popUp",
         }); // Animación tipo popUp
       };
       return <button onClick={handleToastAnimationPopUp}>Toast Rebote</button>;
@@ -248,11 +250,12 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
   - **Tipo**: `string`
   - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
   - **Ejemplo**:
+
     ```jsx
     function App() {
       const handleToastIcon = () => {
         showToast.success("¡Toast con ícono!", {
-          icon: '🎉', // Opcional: puede ser un ícono, emoji o SVG personalizado
+          icon: "🎉", // Opcional: puede ser un ícono, emoji o SVG personalizado
         });
       };
 
@@ -261,10 +264,12 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
     ```
 
 - **`sound`**:
+
   - **Tipo**: `boolean`
   - **Descripción**: Activa o desactiva un sonido cuando se muestra la notificación.
   - **Valor por defecto**: `false`
   - **Ejemplo**:
+
     ```jsx
     import { showToast } from "nextjs-toast-notify";
 
@@ -288,12 +293,12 @@ import { showToast } from "nextjs-toast-notify";
 function App() {
   const mostrarNotificacion = () => {
     showToast.success("¡Operación exitosa!", {
-      duration: 4000,        // Duración del toast en milisegundos (4 segundos)
-      position: "top-center",// Posición en pantalla del toast
-      transition: "bounceIn",// Animación de entrada
-      icon: "🚀",            // Ícono personalizado (puede ser emoji, svg o HTML)
-      progress: false,       // Mostrar o no la barra de progreso
-      sound: true,           // Reproducir sonido al mostrar el toast
+      duration: 4000, // Duración del toast en milisegundos (4 segundos)
+      position: "top-center", // Posición en pantalla del toast
+      transition: "bounceIn", // Animación de entrada
+      icon: "🚀", // Ícono personalizado (puede ser emoji, svg o HTML)
+      progress: false, // Mostrar o no la barra de progreso
+      sound: true, // Reproducir sonido al mostrar el toast
     });
   };
 
@@ -302,6 +307,7 @@ function App() {
 
 export default App;
 ```
+
 La notificación tiene una **duración de 4 segundos**, está **centrada en la parte superior**, con un efecto de **animación de rebote**, un **ícono personalizado**, **sin barra de progreso** y con **sonido activado**.
 
 ## 🌟 Ventajas y Características Clave
@@ -321,7 +327,6 @@ La notificación tiene una **duración de 4 segundos**, está **centrada en la p
 - **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
 - **Licencia abierta:** Publicado bajo licencia MIT, permitiendo su uso en proyectos comerciales y personales sin restricciones.
 - **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
-
 
 ## 🤝 Únete y Contribuye
 
