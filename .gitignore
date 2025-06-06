@@ -8,7 +8,7 @@
 # Logs
 *node_modules/*
 node_modules
-dist
+dist/
 logs
 *.log
 npm-debug.log*
