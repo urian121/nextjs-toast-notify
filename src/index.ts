@@ -1,11 +1,9 @@
 import css from "./styles/nextjs-toast-notify.css?inline";
-const injectStyles = () => {
+if (typeof window !== "undefined" && typeof document !== "undefined") {
   const style = document.createElement("style");
   style.textContent = css;
   document.head.appendChild(style);
-};
-
-injectStyles();
+}
 
 
 import { ToastProps, ToastOptions } from "./interfaces/index";
