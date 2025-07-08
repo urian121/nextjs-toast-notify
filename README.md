@@ -129,7 +129,7 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
   <body>
     <button id="show-toast">Mostrar Toast</button>
 
-    <script src="https://unpkg.com/nextjs-toast-notify@1.45.0/dist/nextjs-toast-notify.js"></script>
+    <script src="https://unpkg.com/nextjs-toast-notify@1.47.0/dist/nextjs-toast-notify.js"></script>
     <script>
       document.getElementById("show-toast").addEventListener("click", () => {
         showToast.success("Hola a todos los Devs de JavaScript!", {

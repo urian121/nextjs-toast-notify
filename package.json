@@ -8,8 +8,14 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/nextjs-toast-notify.es.js",
-      "require": "./dist/nextjs-toast-notify.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/nextjs-toast-notify.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/nextjs-toast-notify.js"
+      }
     }
   },
   "files": [
