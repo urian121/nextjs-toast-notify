@@ -45,9 +45,10 @@
   border-radius: 6px;
   background: #fff;
   padding: 8px 15px 8px 8px;
-  box-shadow: 0 6px 20px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 1.125rem 0 rgba(47, 43, 61, 0.16);
   overflow: hidden;
-  transform: translateY(-20px);
+  /*transform: translateY(-20px); */
+  transform: translateY(0px);
   transition: opacity 0.5s ease, transform 0.5s ease;
   pointer-events: all;
 }
@@ -70,7 +71,7 @@
   color: #fff;
   font-size: 20px;
   border-radius: 50%;
-  animation: pulse 1.0s ease-in-out 1;
+  animation: pulse 1s ease-in-out 1;
 }
 
 /* Clave para animación de latidos */
@@ -159,7 +160,7 @@
 }
 
 .toast-nextjs .progress:before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -189,7 +190,7 @@
 
 .close-toast::before,
 .close-toast::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
   height: 14px;
@@ -285,51 +286,6 @@
 
 .animate-bounceOut {
   animation: bounceOut 0.6s forwards;
-}
-
-/* bottomToTopBounce animacion de entrada */
-@keyframes bottomToTopBounce {
-  0% {
-    opacity: 0;
-    transform: translateY(100%) scale(0.8); /* Ajusta la escala inicial */
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10%) scale(1.2); /* Aumenta la escala y ajusta la posición */
-  }
-  80% {
-    transform: translateY(0%) scale(1); /* Ajusta la escala para el final */
-  }
-  100% {
-    transform: translateY(0%) scale(1);
-    opacity: 1;
-  }
-}
-
-/* topToBottomBounce, animacion de salida del toast con respecto a la entrada bottomToTopBounce. */
-@keyframes topToBottomBounce {
-  0% {
-    opacity: 1;
-    transform: translateY(0%) scale(1);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(10%) scale(0.9); /* Reduce la escala y desplaza hacia abajo */
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%) scale(0.8); /* Desplaza completamente fuera de la vista y reduce la escala */
-  }
-}
-
-/* Clase para aplicar la animación */
-.animate-bottomToTopBounce {
-  animation: bottomToTopBounce 0.6s ease-out forwards;
-}
-
-/* Clase para aplicar la animación de salida */
-.animate-topToBottomBounce {
-  animation: topToBottomBounce 0.6s ease-in forwards;
 }
 
 /** bounceInDown animacion de entrada */
@@ -483,6 +439,49 @@
   animation: popUpOut 0.5s forwards;
 }
 
+@keyframes TopBounce {
+      from,
+      20%,
+      53%,
+      80%,
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+
+      40%,
+      43% {
+        transform: translate3d(0, -30px, 0);
+      }
+
+      70% {
+        transform: translate3d(0, -15px, 0);
+      }
+
+      90% {
+        transform: translate3d(0, -4px, 0);
+      }
+    }
+
+.animate-topBounce {
+  animation: TopBounce 1s;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@keyframes TopBounceOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+.animate-topBounceOut {
+  animation: TopBounceOut 1s forwards;
+  pointer-events: none;
+}
+
 @media (min-width: 280px) and (max-width: 380px) {
   .toast-container {
     width: 100%;
@@ -497,7 +496,6 @@
     transform: translate(-50%);
   }
 }
-
 
 @media (min-width: 381px) and (max-width: 480px) {
   .toast-container {

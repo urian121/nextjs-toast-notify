@@ -221,7 +221,7 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
 
 - **`transition`**:
 
-  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'bottomToTopBounce' | 'bounceInDown'`
+  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown'`
   - **Descripción**: El efecto de animación de entrada o salida para la notificación.
   - **Valor por defecto**: `'fadeIn'`
   - **Ejemplo**:
@@ -315,7 +315,7 @@ La notificación tiene una **duración de 4 segundos**, está **centrada en la p
 - **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
 - **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
 - **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `swingInverted`, `popUp`, `bottomToTopBounce`, `bounceInDown`).
+- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `swingInverted`, `popUp`, `topBounce`, `bounceInDown`).
 - **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
 - **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
 - **Cierre Automático**: Permite definir la duración de la alerta, tras la cual se cerrará automáticamente.
