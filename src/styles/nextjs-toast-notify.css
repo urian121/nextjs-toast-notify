@@ -41,7 +41,6 @@
 }
 
 .toast-nextjs {
-  min-height: 2.5em;
   border-radius: 6px;
   background: #fff;
   padding: 8px 15px 8px 8px;
@@ -440,46 +439,94 @@
 }
 
 @keyframes TopBounce {
-      from,
-      20%,
-      53%,
-      80%,
-      to {
-        transform: translate3d(0, 0, 0);
-      }
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
 
-      40%,
-      43% {
-        transform: translate3d(0, -30px, 0);
-      }
-
-      70% {
-        transform: translate3d(0, -15px, 0);
-      }
-
-      90% {
-        transform: translate3d(0, -4px, 0);
-      }
-    }
+@keyframes TopBounceOut {
+  0%,
+  20%,
+  53%,
+  80% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  40%,
+  43% {
+    transform: translate3d(0, -30px, 0);
+    opacity: 1;
+  }
+  70% {
+    transform: translate3d(0, -15px, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: translate3d(0, -4px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, -100px, 0);
+    opacity: 0;
+  }
+}
 
 .animate-topBounce {
-  animation: TopBounce 1s;
+  animation: TopBounce 1s ease-out;
   opacity: 1;
   pointer-events: auto;
 }
 
-@keyframes TopBounceOut {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-
 .animate-topBounceOut {
   animation: TopBounceOut 1s forwards;
   pointer-events: none;
+}
+
+/* Smooth Toast Animations */
+@keyframes slideInUp {
+    0% {
+        transform: translate3d(0, 100%, 0) scale(0.95);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutDown {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(0, 100%, 0) scale(0.95);
+        opacity: 0;
+    }
+}
+
+.animate-slideInUp {
+    animation: slideInUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-slideOutDown {
+    animation: slideOutDown 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 @media (min-width: 280px) and (max-width: 380px) {

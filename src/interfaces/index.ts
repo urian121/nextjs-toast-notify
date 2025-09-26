@@ -17,8 +17,8 @@ export interface ToastOptions {
     | "bottom-center"
     | "bottom-right";
 
-  /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'topBounce', 'bounceInDown'. */
-  transition?: "fadeIn" | "swingInverted" | "bounceIn" | "popUp" | "topBounce" | "bounceInDown";
+  /** Tipo de transición para la entrada (default: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'topBounce', 'bounceInDown', 'slideInUp'. */
+  transition?: "fadeIn" | "swingInverted" | "bounceIn" | "popUp" | "topBounce" | "bounceInDown" | "slideInUp";
 
   /** Icono personalizado para la notificación (opcional). */
   icon?: string;

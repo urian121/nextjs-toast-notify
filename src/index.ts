@@ -67,7 +67,7 @@ const getToastContainer = (position: string): HTMLElement => {
  * @param options.duration - Duración en milisegundos que se mostrará la notificación (por defecto: 8000).
  * @param options.progress - Muestra una barra de progreso (por defecto: true).
  * @param options.position - Posición de la notificación. Opciones: 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right' (por defecto: 'top-right').
- * @param options.transition - Tipo de transición para la entrada (por defecto: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'topBounce', 'bounceInDown'.
+ * @param options.transition - Tipo de transición para la entrada (por defecto: 'fadeIn'). Opciones: 'bounceIn', 'swingInverted', 'popUp', 'topBounce', 'bounceInDown', 'slideInUp'.
  * @param options.icon - Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
  * @param options.sound - Indica si se debe reproducir un sonido con la notificación (opcional).
  */
@@ -208,6 +208,9 @@ const closeToast = (toast: HTMLElement) => {
   } else if (toast.classList.contains("animate-popUp")) {
     toast.classList.remove("animate-popUp");
     toast.classList.add("animate-popUpOut");
+  } else if (toast.classList.contains("animate-slideInUp")) {
+    toast.classList.remove("animate-slideInUp");
+    toast.classList.add("animate-slideOutDown");
   }
 
   /**
