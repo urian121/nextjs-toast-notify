@@ -9,10 +9,12 @@ export default defineConfig({
       name: "NextjsToastNotify",
       fileName: (format) =>
         format === "es"
-          ? "nextjs-toast-notify.es.js"
-          : "nextjs-toast-notify.js",
+          ? "nextjs-toast-notify.es.min.js"
+          : "nextjs-toast-notify.min.js",
     },
     cssCodeSplit: false, // ✅ IMPORTANTE
+    minify: 'terser',
+    sourcemap: false, // Sin source maps para menos archivos
   },
   plugins: [
     dts({
