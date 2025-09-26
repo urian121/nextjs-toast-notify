@@ -1,6 +1,6 @@
 {
   "name": "nextjs-toast-notify",
-  "version": "1.48.0",
+  "version": "1.49.0",
   "description": "Es un paquete npm moderno, intuitivo, flexible, liviano e imprescindible para agregar notificaciones emergentes (toasts) a tus aplicaciones web con Next.js.",
   "type": "module",
   "main": "dist/nextjs-toast-notify.min.js",
