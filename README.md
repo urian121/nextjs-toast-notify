@@ -315,23 +315,17 @@ export default App;
 
 La notificación tiene una **duración de 4 segundos**, está **centrada en la parte superior**, con un efecto de **animación de rebote**, un **ícono personalizado**, **sin barra de progreso** y con **sonido activado**.
 
-## 🌟 Ventajas y Características Clave
+## 🚀 Características
 
-- **Fácil Integración**: Simple de agregar y utilizar en cualquier proyecto web.
-- **Altamente Configurable**: Personaliza la duración, la posición, el progreso y el tipo de notificación.
-- **Integración rápida:** Instalación simple a través de npm o yarn, listo para usar en minutos.
-- **Efectos de Animación**: Soporta diferentes efectos de animación para las notificaciones de entrada y salida.
-- **Control del Progreso**: Incluye una barra de progreso opcional para mostrar la duración restante de la notificación.
-- **Posiciones de Notificación**: Soporta múltiples posiciones en la pantalla: `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.
-- **Tipos de Notificación**: Cuatro tipos de notificación predefinidos: `success`, `error`, `warning`, `info`.
-- **Animaciones**: Soporte para animaciones de entrada y salida configurables (`fadeIn`, `bounceIn`, `swingInverted`, `popUp`, `topBounce`, `bounceInDown`, `slideInUp`).
-- **Barra de Progreso**: Opcional para mostrar el progreso de la notificación.
-- **Cierre Manual**: Permite al usuario cerrar las notificaciones mediante un botón de cierre.
-- **Cierre Automático**: Permite definir la duración de la alerta, tras la cual se cerrará automáticamente.
-- **Configuración por Defecto**: Las animaciones y el comportamiento de la notificación se pueden personalizar a través de las opciones de configuración.
-- **Actualizaciones regulares:** Mantenido activamente con mejoras y actualizaciones periódicas.
-- **Licencia abierta:** Publicado bajo licencia MIT, permitiendo su uso en proyectos comerciales y personales sin restricciones.
-- **Documentación clara y detallada:** Incluye ejemplos prácticos y documentación completa para facilitar la implementación y configuración.
+- **Integración rápida:** Instálalo con npm o yarn y úsalo en minutos.  
+- **Altamente configurable:** Controla duración, posición, tipo y progreso.  
+- **Animaciones personalizables:** Soporta varios efectos de entrada y salida.  
+- **Múltiples posiciones:** `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.  
+- **Tipos de notificación:** `success`, `error`, `warning`, `info`.  
+- **Cierre manual o automático** con barra de progreso opcional.  
+- **Configuraciones por defecto** fácilmente modificables.  
+- **Mantenimiento activo** y **licencia MIT**.  
+- **Documentación clara** con ejemplos prácticos.
 
 ## 🤝 Únete y Contribuye
 
