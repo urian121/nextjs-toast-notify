@@ -7,7 +7,7 @@
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
 
-**Nextjs Toast Notify** es el paquete npm moderno, intuitivo, flexible, liviano que transformará cómo manejas las notificaciones en tus aplicaciones web. Diseñado para ofrecer una experiencia de usuario sin interrupciones, **Nextjs Toast Notify** permite agregar alertas emergentes (toasts) con una estética moderna y personalizable. **Nextjs Toast Notify** también destaca por su configuración intuitiva y opciones flexibles, que te permiten adaptar las notificaciones a tus necesidades específicas con facilidad.
+**Nextjs Toast Notify** es el paquete npm moderno, intuitivo, flexible, liviano que transformará cómo manejas las notificaciones en tus aplicaciones web. Diseñado para ofrecer una experiencia de usuario sin interrupciones, **Nextjs Toast Notify** permite agregar alertas emergentes (toasts) con una estética moderna y personalizable.
 
 ## ¿Para Qué Fue Creado?
 
@@ -15,14 +15,15 @@
 
 ## ¿Qué Necesidad Resuelve?
 
-**Nextjs Toast Notify** responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual. En muchas aplicaciones web, es crucial tener una forma efectiva de informar al usuario sobre eventos importantes, resultados de acciones o errores.
+**Nextjs Toast Notify** responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual.
 
 ## Instalación
 
 Puedes instalar el paquete usando npm:
-
+```bash
     $ npm install nextjs-toast-notify --save
     $ yarn add nextjs-toast-notify
+```
 
 ## Casos de uso:
 
@@ -31,27 +32,27 @@ Puedes instalar el paquete usando npm:
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/ToDoAppConReactY-nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/Create-ToDo-List-App-with-ReactJS)
 
-## Ejemplo Práctico utilizando React.js
+### Ejemplo Práctico utilizando React.js
 
 ```jsx
-import { showToast } from "nextjs-toast-notify";
+  import { showToast } from "nextjs-toast-notify";
 
-function App() {
-  const handleShowToast = () => {
-    showToast.success("¡La operación se realizó con éxito!", {
-      duration: 5000,
-      progress: true,
-      position: "bottom-center",
-      transition: "bounceIn",
-      icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>',
-      sound: true,
-    });
-  };
+  function App() {
+    const handleShowToast = () => {
+      showToast.success("¡La operación se realizó con éxito!", {
+        duration: 5000,
+        progress: true,
+        position: "bottom-center",
+        transition: "bounceIn",
+        icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>',
+        sound: true,
+      });
+    };
 
-  return <button onClick={handleShowToast}>Mostrar Toast</button>;
-}
+    return <button onClick={handleShowToast}>Mostrar Toast</button>;
+  }
 
-export default App;
+  export default App;
 ```
 
 ### 🔥Integrar Next.js Toast Notify en una aplicación de Next.js 🚀
@@ -91,12 +92,10 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
 ```
 
 ## API de Nextjs Toast Notify
-
 La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
 
 
 ### Tipos de Notificaciones
-
 **Nextjs Toast Notify** permite mostrar diferentes tipos de notificaciones según el contexto de la aplicación. Para definir el tipo de notificación, solo debes especificarlo al invocar **toast**.
 
 - **✅`showToast.success`**: Muestra un toast de éxito.
@@ -107,20 +106,19 @@ La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes c
 #### Ejemplos de Uso
 
 ```jsx
-import { showToast } from "nextjs-toast-notify";
+  import { showToast } from "nextjs-toast-notify";
 
-function App() {
-  const handleShowSuccessToast = () => {
-    showToast.success("¡Operación exitosa!"); // 'showToast.success' | 'showToast.error' | 'showToast.info' | 'showToast.warning'
-  };
+  function App() {
+    const handleShowSuccessToast = () => {
+      showToast.success("¡Operación exitosa!"); // 'showToast.success' | 'showToast.error' | 'showToast.info' | 'showToast.warning'
+    };
 
-  return <button onClick={handleShowSuccessToast}>Toast Success</button>;
-}
-export default App;
+    return <button onClick={handleShowSuccessToast}>Toast Success</button>;
+  }
+  export default App;
 ```
 
-### Mostrar Notificaciones en Diferentes Posiciones
-
+### Mostrar Notificaciones en Diferentes Posiciones de la Pantalla
 Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesitas especificar la opción `position` con uno de los siguientes valores:
 
 - **`top-left`**: Esquina superior izquierda
@@ -133,19 +131,19 @@ Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesi
 Aquí tienes un ejemplo de cómo configurarlo:
 
 ```jsx
-import { showToast } from "nextjs-toast-notify";
+  import { showToast } from "nextjs-toast-notify";
 
-function App() {
-  const handleToastPosition = () => {
-    showToast.success("¡Operación exitosa!", {
-      position: "top-right", // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
-    });
-  };
+  function App() {
+    const handleToastPosition = () => {
+      showToast.success("¡Operación exitosa!", {
+        position: "top-right", // 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'
+      });
+    };
 
-  return <button onClick={handleToastPosition}>Toast arriba derecha</button>;
-}
+    return <button onClick={handleToastPosition}>Toast arriba derecha</button>;
+  }
 
-export default App;
+  export default App;
 ```
 
 ### Tiempo de Duración de las Notificaciones
@@ -153,12 +151,12 @@ La duración por defecto de las notificaciones es de 8 segundos, pero puedes per
 
 **`duration`**:
 
-  - **Tipo**: `number`
-  - **Descripción**: Define la duración de la notificación en milisegundos.
-  - **Valor por defecto**: `8000`
-  - **Ejemplo**:
+- **Tipo**: `number`
+- **Valor por defecto**: `8000`
 
-    ```jsx
+**Ejemplo**:
+
+  ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
@@ -171,19 +169,19 @@ La duración por defecto de las notificaciones es de 8 segundos, pero puedes per
     }
 
     export default App;
-    ```
+  ```
 
 ### Mostrar Barra de Progreso
 La barra de progreso se muestra por defecto en las notificaciones, pero puedes desactivarla si lo deseas.
 
 **`progress`**:
 
-  - **Tipo**: `boolean`
-  - **Descripción**: Si se debe mostrar una barra de progreso para la notificación.
-  - **Valor por defecto**: `true`
-  - **Ejemplo**:
+- **Tipo**: `boolean`
+- **Valor por defecto**: `true`
 
-    ```jsx
+**Ejemplo**:
+
+  ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
@@ -195,19 +193,19 @@ La barra de progreso se muestra por defecto en las notificaciones, pero puedes d
       return <button onClick={handleShowToast}>Mostrar Toast</button>;
     }
     export default App;
-    ```
+  ```
 
 ### Posición de las Notificaciones
 La posición por defecto de las notificaciones es la esquina superior derecha, pero puedes cambiarla mediante la opción `position`.
 
 **`position`**:
 
-  - **Tipo**: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
-  - **Descripción**: Define la posición de la notificación en la pantalla.
-  - **Valor por defecto**: `'top-right'`
-  - **Ejemplo**:
+- **Tipo**: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
+- **Valor por defecto**: `'top-right'`
 
-    ```jsx
+**Ejemplo**:
+
+  ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
@@ -221,19 +219,19 @@ La posición por defecto de las notificaciones es la esquina superior derecha, p
     }
 
     export default App;
-    ```
+  ```
 
 ### Animación de las Notificaciones
 Puedes personalizar la animación de entrada y salida de las notificaciones mediante la opción `transition`.
 
 **`transition`**:
 
-  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | 'slideInUp'`
-  - **Descripción**: El efecto de animación de entrada o salida para la notificación.
-  - **Valor por defecto**: `'fadeIn'`
-  - **Ejemplo**:
+- **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | 'slideInUp'`
+- **Valor por defecto**: `'fadeIn'`
 
-    ```jsx
+**Ejemplo**:
+
+  ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
@@ -246,18 +244,17 @@ Puedes personalizar la animación de entrada y salida de las notificaciones medi
     }
 
     export default App;
-    ```
+  ```
 
 ### Iconos Personalizados para las Notificaciones
 Puedes agregar un ícono personalizado a las notificaciones para mejorar la identidad visual. Si no se proporciona un ícono, se usará uno predeterminado basado en el tipo de notificación.
 
 **`icon`**:
+- **Tipo**: `string`
 
-  - **Tipo**: `string`
-  - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
-  - **Ejemplo**:
+**Ejemplo**:
 
-    ```jsx
+  ```jsx
     function App() {
       const handleToastIcon = () => {
         showToast.success("¡Toast con ícono!", {
@@ -267,18 +264,18 @@ Puedes agregar un ícono personalizado a las notificaciones para mejorar la iden
 
       return <button onClick={handleToastIcon}>Toast con ícono</button>;
     }
-    ```
+  ```
 ### Sonido para las Notificaciones
 Puedes activar un sonido cuando se muestra la notificación para mejorar la atención del usuario.
 
 **`sound`**:
 
-  - **Tipo**: `boolean`
-  - **Descripción**: Activa o desactiva un sonido cuando se muestra la notificación.
-  - **Valor por defecto**: `false`
-  - **Ejemplo**:
+- **Tipo**: `boolean`
+- **Valor por defecto**: `false`
 
-    ```jsx
+**Ejemplo**:
+
+  ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
@@ -291,7 +288,7 @@ Puedes activar un sonido cuando se muestra la notificación para mejorar la aten
     }
 
     export default App;
-    ```
+  ```
 
 ### Ejemplo Completo
 
