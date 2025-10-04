@@ -98,7 +98,7 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
 ## API de Nextjs Toast Notify
 La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
 
-### 🚀 Tipos de Notificaciones  
+### Tipos de Notificaciones  
 
 **Nextjs Toast Notify** permite mostrar distintos tipos de notificaciones según el contexto de tu aplicación.  
 Para definir el tipo, simplemente especifícalo al invocar `showToast`:  
