@@ -1,1 +1,38 @@
-src
+# Código fuente (se compila a dist/)
+src/
+
+# Configuración de desarrollo
+tsconfig.json
+rollup.config.js
+vite.config.ts
+
+# Archivos de desarrollo
+.gitignore
+.eslintrc*
+.prettierrc*
+*.config.js
+*.config.ts
+
+# Dependencias y locks
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Archivos temporales
+*.log
+*.tmp
+.DS_Store
+.env*
+
+# Testing
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+coverage/
+
+# Documentación de desarrollo
+docs/
+examples/

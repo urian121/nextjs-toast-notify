@@ -59,18 +59,52 @@ export default App;
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/like-dislike-nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/sistema-like-dislikes-con-nextjs-y-nextjs-toast-notify)
 
-# Tipos de Notificaciones
+## Uso a través de CDN
+
+También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto utilizando un enlace CDN. Sigue estos pasos:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nextjs Toast Notify con CDN</title>
+  </head>
+  <body>
+    <button id="show-toast">Mostrar Toast</button>
+
+    <script src="https://unpkg.com/nextjs-toast-notify@latest/dist/nextjs-toast-notify.min.js"></script>
+    <script>
+      document.getElementById("show-toast").addEventListener("click", () => {
+        showToast.success("Hola a todos los Devs de JavaScript!", {
+          duration: 5000,
+          position: "top-right",
+          transition: "swingInverted",
+          icon: "",
+          sound: true,
+        });
+      });
+    </script>
+  </body>
+</html>
+```
+
+## API de Nextjs Toast Notify
+
+La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
+
+
+### Tipos de Notificaciones
 
 **Nextjs Toast Notify** permite mostrar diferentes tipos de notificaciones según el contexto de la aplicación. Para definir el tipo de notificación, solo debes especificarlo al invocar **toast**.
-
-### Tipos de Toast
 
 - **✅`showToast.success`**: Muestra un toast de éxito.
 - **❌`showToast.error`**: Muestra un toast de error.
 - **⚠️`showToast.warning`**: Muestra un toast de advertencia.
 - **⬆️`showToast.info`**: Muestra un toast de información.
 
-### Ejemplos de Uso
+#### Ejemplos de Uso
 
 ```jsx
 import { showToast } from "nextjs-toast-notify";
@@ -85,7 +119,7 @@ function App() {
 export default App;
 ```
 
-## Mostrar Notificaciones en Diferentes Posiciones
+### Mostrar Notificaciones en Diferentes Posiciones
 
 Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesitas especificar la opción `position` con uno de los siguientes valores:
 
@@ -114,46 +148,10 @@ function App() {
 export default App;
 ```
 
-## Uso a través de CDN
+### Tiempo de Duración de las Notificaciones
+La duración por defecto de las notificaciones es de 8 segundos, pero puedes personalizarla mediante la opción `duration`.
 
-También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto utilizando un enlace CDN. Sigue estos pasos:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nextjs Toast Notify con CDN</title>
-  </head>
-  <body>
-    <button id="show-toast">Mostrar Toast</button>
-
-    <script src="https://unpkg.com/nextjs-toast-notify@1.50.0/dist/nextjs-toast-notify.min.js"></script>
-    <script>
-      document.getElementById("show-toast").addEventListener("click", () => {
-        showToast.success("Hola a todos los Devs de JavaScript!", {
-          duration: 5000,
-          position: "top-right",
-          transition: "bounceIn",
-          icon: "",
-          sound: true,
-        });
-      });
-    </script>
-  </body>
-</html>
-```
-
-## API de Nextjs Toast Notify
-
-La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
-
-### Opciones de Personalización
-
-Puedes personalizar las notificaciones mediante las opciones que se pasan como el segundo parámetro en cada uno de los métodos. Aquí están las opciones disponibles:
-
-- **`duration`**:
+**`duration`**:
 
   - **Tipo**: `number`
   - **Descripción**: Define la duración de la notificación en milisegundos.
@@ -175,7 +173,10 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
     export default App;
     ```
 
-- **`progress`**:
+### Mostrar Barra de Progreso
+La barra de progreso se muestra por defecto en las notificaciones, pero puedes desactivarla si lo deseas.
+
+**`progress`**:
 
   - **Tipo**: `boolean`
   - **Descripción**: Si se debe mostrar una barra de progreso para la notificación.
@@ -196,7 +197,10 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
     export default App;
     ```
 
-- **`position`**:
+### Posición de las Notificaciones
+La posición por defecto de las notificaciones es la esquina superior derecha, pero puedes cambiarla mediante la opción `position`.
+
+**`position`**:
 
   - **Tipo**: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
   - **Descripción**: Define la posición de la notificación en la pantalla.
@@ -219,9 +223,12 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
     export default App;
     ```
 
-- **`transition`**:
+### Animación de las Notificaciones
+Puedes personalizar la animación de entrada y salida de las notificaciones mediante la opción `transition`.
 
-  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | slideInUp`
+**`transition`**:
+
+  - **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | 'slideInUp'`
   - **Descripción**: El efecto de animación de entrada o salida para la notificación.
   - **Valor por defecto**: `'fadeIn'`
   - **Ejemplo**:
@@ -241,7 +248,10 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
     export default App;
     ```
 
-- **`icon`**:
+### Iconos Personalizados para las Notificaciones
+Puedes agregar un ícono personalizado a las notificaciones para mejorar la identidad visual. Si no se proporciona un ícono, se usará uno predeterminado basado en el tipo de notificación.
+
+**`icon`**:
 
   - **Tipo**: `string`
   - **Descripción**: Icono personalizado para la notificación (opcional). Si no se proporciona, se usa un ícono predeterminado basado en el tipo de notificación.
@@ -258,8 +268,10 @@ Puedes personalizar las notificaciones mediante las opciones que se pasan como e
       return <button onClick={handleToastIcon}>Toast con ícono</button>;
     }
     ```
+### Sonido para las Notificaciones
+Puedes activar un sonido cuando se muestra la notificación para mejorar la atención del usuario.
 
-- **`sound`**:
+**`sound`**:
 
   - **Tipo**: `boolean`
   - **Descripción**: Activa o desactiva un sonido cuando se muestra la notificación.
