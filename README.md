@@ -9,20 +9,24 @@
 
 **Nextjs Toast Notify** es el paquete npm moderno, intuitivo, flexible, liviano que transformará cómo manejas las notificaciones en tus aplicaciones web. Diseñado para ofrecer una experiencia de usuario sin interrupciones, **Nextjs Toast Notify** permite agregar alertas emergentes (toasts) con una estética moderna y personalizable.
 
-## ¿Para Qué Fue Creado?
+### ¿Para qué fue creado?
 
-**Nextjs Toast Notify** fue creado para simplificar la implementación de notificaciones en aplicaciones web, permitiendo a los desarrolladores agregar mensajes informativos, de éxito, advertencia o error de forma rápida y sencilla. **Nextjs Toast Notify** es altamente personalizable y compatible con diferentes posiciones en la pantalla, así como con varios efectos de animación para mejorar la experiencia del usuario.
+**Nextjs Toast Notify** nació para hacer que mostrar notificaciones en tus apps web sea **rápido, elegante y sin dolor de cabeza**.  
+Agrega *toasts* modernos y totalmente personalizables con una sola línea de código.
 
-## ¿Qué Necesidad Resuelve?
+### ¿Qué Necesidad Resuelve?
 
 **Nextjs Toast Notify** responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual.
 
 ## Instalación
+Instala **Nextjs Toast Notify** fácilmente con tu gestor de paquetes favorito:
 
-Puedes instalar el paquete usando npm:
 ```bash
-    $ npm install nextjs-toast-notify --save
-    $ yarn add nextjs-toast-notify
+  # Usando npm
+  npm install nextjs-toast-notify --save
+
+  # O con yarn
+  yarn add nextjs-toast-notify
 ```
 
 ## Casos de uso:
@@ -94,14 +98,15 @@ También puedes incluir **Nextjs Toast Notify** directamente en tu proyecto util
 ## API de Nextjs Toast Notify
 La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes con una amplia gama de configuraciones. A continuación, se detalla cómo utilizar los métodos disponibles y qué opciones puedes configurar.
 
+### 🚀 Tipos de Notificaciones  
 
-### Tipos de Notificaciones
-**Nextjs Toast Notify** permite mostrar diferentes tipos de notificaciones según el contexto de la aplicación. Para definir el tipo de notificación, solo debes especificarlo al invocar **toast**.
+**Nextjs Toast Notify** permite mostrar distintos tipos de notificaciones según el contexto de tu aplicación.  
+Para definir el tipo, simplemente especifícalo al invocar `showToast`:  
 
-- **✅`showToast.success`**: Muestra un toast de éxito.
-- **❌`showToast.error`**: Muestra un toast de error.
-- **⚠️`showToast.warning`**: Muestra un toast de advertencia.
-- **⬆️`showToast.info`**: Muestra un toast de información.
+- ✅ **`showToast.success`** → Muestra un toast de **éxito**.  
+- ❌ **`showToast.error`** → Muestra un toast de **error**.  
+- ⚠️ **`showToast.warning`** → Muestra un toast de **advertencia**.  
+- ⬆️ **`showToast.info`** → Muestra un toast de **información**.
 
 #### Ejemplos de Uso
 
@@ -118,15 +123,16 @@ La API de **Nextjs Toast Notify** te permite mostrar notificaciones emergentes c
   export default App;
 ```
 
-### Mostrar Notificaciones en Diferentes Posiciones de la Pantalla
-Para mostrar notificaciones en diferentes posiciones de la pantalla, solo necesitas especificar la opción `position` con uno de los siguientes valores:
+### Mostrar Notificaciones en Diferentes Posiciones de la Pantalla  
 
-- **`top-left`**: Esquina superior izquierda
-- **`top-center`**: Centro superior
-- **`top-right`**: Esquina superior derecha
-- **`bottom-left`**: Esquina inferior izquierda
-- **`bottom-center`**: Centro inferior
-- **`bottom-right`**: Esquina inferior derecha
+Para mostrar notificaciones en distintas posiciones de la pantalla, especifica la opción `position` con alguno de los siguientes valores:  
+
+- **`top-left`** → Esquina superior izquierda  
+- **`top-center`** → Centro superior  
+- **`top-right`** → Esquina superior derecha  
+- **`bottom-left`** → Esquina inferior izquierda  
+- **`bottom-center`** → Centro inferior  
+- **`bottom-right`** → Esquina inferior derecha
 
 Aquí tienes un ejemplo de cómo configurarlo:
 
@@ -146,13 +152,13 @@ Aquí tienes un ejemplo de cómo configurarlo:
   export default App;
 ```
 
-### Tiempo de Duración de las Notificaciones
-La duración por defecto de las notificaciones es de 8 segundos, pero puedes personalizarla mediante la opción `duration`.
+### Tiempo de Duración de las Notificaciones  
 
-**`duration`**:
+La duración por defecto de las notificaciones es de **8 segundos**, pero puedes personalizarla con la opción `duration`.  
 
-- **Tipo**: `number`
-- **Valor por defecto**: `8000`
+- **Propiedad:** `duration`  
+- **Tipo:** `number`  
+- **Por defecto:** `8000`
 
 **Ejemplo**:
 
@@ -171,13 +177,13 @@ La duración por defecto de las notificaciones es de 8 segundos, pero puedes per
     export default App;
   ```
 
-### Mostrar Barra de Progreso
-La barra de progreso se muestra por defecto en las notificaciones, pero puedes desactivarla si lo deseas.
+### Mostrar Barra de Progreso  
 
-**`progress`**:
+La **barra de progreso** se muestra por defecto en las notificaciones, pero puedes desactivarla si lo prefieres.  
 
-- **Tipo**: `boolean`
-- **Valor por defecto**: `true`
+- **Propiedad:** `progress`  
+- **Tipo:** `boolean`  
+- **Por defecto:** `true`
 
 **Ejemplo**:
 
@@ -195,13 +201,14 @@ La barra de progreso se muestra por defecto en las notificaciones, pero puedes d
     export default App;
   ```
 
-### Posición de las Notificaciones
-La posición por defecto de las notificaciones es la esquina superior derecha, pero puedes cambiarla mediante la opción `position`.
+### Posición de las Notificaciones  
 
-**`position`**:
+La posición por defecto es la **esquina superior derecha**, pero puedes cambiarla con la opción `position`.  
 
-- **Tipo**: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`
-- **Valor por defecto**: `'top-right'`
+- **Propiedad:** `position`  
+- **Tipo:** `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'`  
+- **Por defecto:** `'top-right'`
+
 
 **Ejemplo**:
 
@@ -221,13 +228,13 @@ La posición por defecto de las notificaciones es la esquina superior derecha, p
     export default App;
   ```
 
-### Animación de las Notificaciones
-Puedes personalizar la animación de entrada y salida de las notificaciones mediante la opción `transition`.
+### Animación de las Notificaciones  
 
-**`transition`**:
+Personaliza la **animación de entrada y salida** de las notificaciones mediante la opción `transition`.  
 
-- **Tipo**: `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | 'slideInUp'`
-- **Valor por defecto**: `'fadeIn'`
+- **Propiedad:** `transition`  
+- **Tipo:** `'fadeIn' | 'bounceIn' | 'swingInverted' | 'popUp' | 'topBounce' | 'bounceInDown' | 'slideInUp'`  
+- **Por defecto:** `'fadeIn'`
 
 **Ejemplo**:
 
@@ -246,11 +253,14 @@ Puedes personalizar la animación de entrada y salida de las notificaciones medi
     export default App;
   ```
 
-### Iconos Personalizados para las Notificaciones
-Puedes agregar un ícono personalizado a las notificaciones para mejorar la identidad visual. Si no se proporciona un ícono, se usará uno predeterminado basado en el tipo de notificación.
+### Íconos Personalizados para las Notificaciones  
 
-**`icon`**:
-- **Tipo**: `string`
+Agrega un **ícono personalizado** a las notificaciones para mejorar la identidad visual.  
+Si no se proporciona, se usa uno **predeterminado según el tipo de notificación**.  
+
+- **Propiedad:** `icon`  
+- **Tipo:** `string`
+
 
 **Ejemplo**:
 
@@ -265,13 +275,14 @@ Puedes agregar un ícono personalizado a las notificaciones para mejorar la iden
       return <button onClick={handleToastIcon}>Toast con ícono</button>;
     }
   ```
-### Sonido para las Notificaciones
-Puedes activar un sonido cuando se muestra la notificación para mejorar la atención del usuario.
 
-**`sound`**:
+### Sonido de Notificación  
 
-- **Tipo**: `boolean`
-- **Valor por defecto**: `false`
+Activa un **sonido al mostrar la notificación** para captar mejor la atención del usuario.  
+
+- **Propiedad:** `sound`  
+- **Tipo:** `boolean`  
+- **Por defecto:** `false`
 
 **Ejemplo**:
 
