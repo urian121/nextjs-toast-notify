@@ -1,59 +1,112 @@
+:root {
+  /* Layout & Positioning */
+  --toast-container-min-width: 300px;
+  --toast-container-gap: 10px;
+  --toast-container-z-index: 99999;
+  --toast-position-offset: 25px;
+  --toast-side-offset: 30px;
+  --toast-center-position: 50%;
+  
+  /* Colors */
+  --toast-bg-color: #fff;
+  --toast-text-color: #666666;
+  --toast-close-color: #222;
+  --toast-success-color: #4caf50;
+  --toast-error-color: #f44336;
+  --toast-warning-color: #ff9800;
+  --toast-info-color: #2196f3;
+  
+  /* Spacing & Sizing */
+  --toast-padding: 8px 15px 8px 8px;
+  --toast-border-radius: 6px;
+  --toast-icon-size: 30px;
+  --toast-message-margin: 0 20px;
+  --toast-close-padding: 5px;
+  --toast-close-position-top: 10px;
+  --toast-close-position-right: 15px;
+  --toast-progress-height: 4px;
+  
+  /* Typography */
+  --toast-font-size: 17px;
+  --toast-font-weight: 400;
+  --toast-icon-font-size: 20px;
+  
+  /* Shadows & Effects */
+  --toast-box-shadow: 0 0.25rem 1.125rem 0 rgba(47, 43, 61, 0.16);
+  --toast-close-line-width: 2px;
+  --toast-close-line-height: 14px;
+  
+  /* Animation Durations */
+  --toast-transition-duration: 0.5s;
+  --toast-animation-fast: 0.25s;
+  --toast-animation-medium: 0.35s;
+  --toast-animation-normal: 0.5s;
+  --toast-animation-slow: 0.6s;
+  --toast-animation-bounce: 1s;
+  --toast-progress-duration: 5000ms;
+  
+  /* Animation Easings */
+  --toast-ease-out: ease-out;
+  --toast-ease-in-out: ease-in-out;
+  --toast-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --toast-ease-smooth: cubic-bezier(0.4, 0, 1, 1);
+  
+  /* Opacity Values */
+  --toast-opacity-hidden: 0;
+  --toast-opacity-visible: 1;
+  --toast-opacity-dimmed: 0.7;
+  --toast-opacity-semi: 0.5;
+  --toast-opacity-faded: 0.8;
+}
+
 .toast-container {
-  min-width: 300px;
+  --toast-offset: 1rem;
+  --toast-center: 50%;
+  min-width: var(--toast-container-min-width);
   position: fixed;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--toast-container-gap);
   pointer-events: none;
-  z-index: 99999;
+  z-index: var(--toast-container-z-index);
 }
 
-.toast-container.top-left {
-  top: 25px;
-  left: 30px;
+/* Posiciones verticales */
+.toast-container[class*="top-"] {
+  top: var(--toast-offset);
 }
 
-.toast-container.top-center {
-  top: 25px;
-  left: 50%;
+.toast-container[class*="bottom-"] {
+  bottom: var(--toast-offset);
+}
+
+/* Posiciones horizontales */
+.toast-container[class*="-left"] {
+  left: var(--toast-offset);
+}
+
+.toast-container[class*="-right"] {
+  right: var(--toast-offset);
+}
+
+.toast-container[class*="-center"] {
+  left: var(--toast-center);
   transform: translateX(-50%);
-}
-
-.toast-container.top-right {
-  top: 25px;
-  right: 30px;
-}
-
-.toast-container.bottom-left {
-  bottom: 25px;
-  left: 30px;
-}
-
-.toast-container.bottom-center {
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.toast-container.bottom-right {
-  bottom: 25px;
-  right: 30px;
 }
 
 .toast-nextjs {
-  border-radius: 6px;
-  background: #fff;
-  padding: 8px 15px 8px 8px;
-  box-shadow: 0 0.25rem 1.125rem 0 rgba(47, 43, 61, 0.16);
+  border-radius: var(--toast-border-radius);
+  background: var(--toast-bg-color);
+  padding: var(--toast-padding);
+  box-shadow: var(--toast-box-shadow);
   overflow: hidden;
-  /*transform: translateY(-20px); */
   transform: translateY(0px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity var(--toast-transition-duration) ease, transform var(--toast-transition-duration) ease;
   pointer-events: all;
 }
 
 .toast.toast-active {
-  opacity: 1;
+  opacity: var(--toast-opacity-visible);
   transform: translateY(0);
 }
 
@@ -61,75 +114,60 @@
   display: flex;
   align-items: center;
 }
+
 .toast-content .check {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30px;
-  min-width: 30px;
-  color: #fff;
-  font-size: 20px;
+  height: var(--toast-icon-size);
+  min-width: var(--toast-icon-size);
+  color: var(--toast-bg-color);
+  font-size: var(--toast-icon-font-size);
   border-radius: 50%;
-  animation: pulse 1s ease-in-out 1;
-}
-
-/* Clave para animación de latidos */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  animation: pulse var(--toast-animation-bounce) ease-in-out 1;
 }
 
 .toast-content .message {
   display: flex;
   flex-direction: column;
-  margin: 0 20px;
+  margin: var(--toast-message-margin);
 }
 
 .message .text {
-  font-size: 17px;
-  font-weight: 400;
+  font-size: var(--toast-font-size);
+  font-weight: var(--toast-font-weight);
   text-align: center;
-  color: #666666;
+  color: var(--toast-text-color);
   line-height: normal;
 }
 
 .toast-nextjs .close-toast {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 5px;
+  top: var(--toast-close-position-top);
+  right: var(--toast-close-position-right);
+  padding: var(--toast-close-padding);
   cursor: pointer;
-  opacity: 0.7;
+  opacity: var(--toast-opacity-dimmed);
 }
 
 .toast-nextjs .close-toast:hover {
-  opacity: 1;
-  animation: pulse 1s infinite;
+  opacity: var(--toast-opacity-visible);
+  animation: pulse var(--toast-animation-bounce) infinite;
 }
 
-/* Definición de la animación de latidos */
+/* Animaciones de pulso optimizadas */
 @keyframes pulse {
   0% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: var(--toast-opacity-visible);
   }
   50% {
-    transform: scale(1.1);
-    opacity: 1;
+    transform: scale(1.2);
+    opacity: var(--toast-opacity-faded);
   }
   100% {
     transform: scale(1);
-    opacity: 0.5;
+    opacity: var(--toast-opacity-visible);
   }
 }
 
@@ -137,41 +175,41 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 4px;
+  height: var(--toast-progress-height);
   width: 100%;
   background-color: transparent;
 }
 
 .toast-nextjs.success .progress:before {
-  background-color: #4caf50;
+  background-color: var(--toast-success-color);
 }
 
 .toast-nextjs.error .progress:before {
-  background-color: #f44336;
+  background-color: var(--toast-error-color);
 }
 
 .toast-nextjs.warning .progress:before {
-  background-color: #ff9800;
+  background-color: var(--toast-warning-color);
 }
 
 .toast-nextjs.info .progress:before {
-  background-color: #2196f3;
+  background-color: var(--toast-info-color);
 }
 
-.toast-nextjs .progress:before {
+.toast-nextjs .progress::before {
   content: "";
   position: absolute;
   bottom: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  background-color: #4caf50;
+  background-color: var(--toast-success-color);
   transform: translateX(100%);
-  transition: transform var(--progress-duration, 5000ms) linear;
+  transition: transform var(--progress-duration, var(--toast-progress-duration)) linear;
 }
 
 .toast-nextjs .progress.toast-active:before {
-  animation: progress var(--progress-duration, 5000ms) linear forwards;
+  animation: progress var(--progress-duration, var(--toast-progress-duration)) linear forwards;
 }
 
 @keyframes progress {
@@ -191,9 +229,9 @@
 .close-toast::after {
   content: "";
   position: absolute;
-  width: 2px;
-  height: 14px;
-  background-color: #222;
+  width: var(--toast-close-line-width);
+  height: var(--toast-close-line-height);
+  background-color: var(--toast-close-color);
 }
 
 .close-toast::before {
@@ -204,98 +242,94 @@
   transform: rotate(-45deg);
 }
 
-/* fadeIn animation */
+/* Animaciones de entrada y salida optimizadas */
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
     transform: translateY(-20px);
   }
   100% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(0);
   }
 }
 
-/* Animacion de salidad para la fadeIn */
 @keyframes fadeOut {
   0% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(0);
   }
   100% {
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
     transform: translateY(20px);
   }
 }
 
-/* Classes to apply animations */
 .animate-fadeIn {
-  animation: fadeIn 0.5s forwards;
-}
-.animate-fadeOut {
-  animation: fadeOut 0.5s forwards;
+  animation: fadeIn var(--toast-animation-normal) forwards;
 }
 
-/* BounceIn animation */
+.animate-fadeOut {
+  animation: fadeOut var(--toast-animation-normal) forwards;
+}
+
 @keyframes bounceIn {
   0% {
     transform: scale(0) translateY(-50%);
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
   }
   60% {
     transform: scale(1.1) translateY(0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   80% {
     transform: scale(0.9) translateY(0);
   }
   100% {
     transform: scale(1) translateY(0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
 }
 
-/* BounceOut animacion de salidad para la bounceIn */
 @keyframes bounceOut {
   0% {
     transform: scale(1) translateY(0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   20% {
     transform: scale(0.9) translateY(10%);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   50% {
     transform: scale(1.1) translateY(-10%);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   80% {
     transform: scale(0.9) translateY(5%);
-    opacity: 0.5;
+    opacity: var(--toast-opacity-semi);
   }
   100% {
     transform: scale(0) translateY(100%);
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
   }
 }
-/* Classes to apply animations */
+
 .animate-bounceIn {
-  animation: bounceIn 0.6s forwards;
+  animation: bounceIn var(--toast-animation-slow) forwards;
 }
 
 .animate-bounceOut {
-  animation: bounceOut 0.6s forwards;
+  animation: bounceOut var(--toast-animation-slow) forwards;
 }
 
-/** bounceInDown animacion de entrada */
 @keyframes bounceInDown {
   0% {
-    opacity: 0;
-    transform: translateY(-3000px) scale(0.8); /* Ajusta la escala inicial */
+    opacity: var(--toast-opacity-hidden);
+    transform: translateY(-3000px) scale(0.8);
   }
   60% {
-    opacity: 1;
-    transform: translateY(25px) scale(1.1); /* Ajusta la escala y posición */
+    opacity: var(--toast-opacity-visible);
+    transform: translateY(25px) scale(1.1);
   }
   75% {
     transform: translateY(-10px) scale(1);
@@ -308,134 +342,128 @@
   }
 }
 
-/** bounceOutUp animacion de salida, que corresponde a bounceInDown */
 @keyframes bounceOutUp {
   0% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(0) scale(1);
   }
   20% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(-10px) scale(1.1);
   }
   50% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(-30px) scale(0.9);
   }
   80% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: translateY(-15px) scale(1);
   }
   100% {
-    opacity: 0;
-    transform: translateY(-1000px) scale(0.8); /* Ajusta la escala para la salida */
+    opacity: var(--toast-opacity-hidden);
+    transform: translateY(-1000px) scale(0.8);
   }
 }
 
-/* Clases para aplicar las animaciones */
 .animate-bounceInDown {
-  animation: bounceInDown 0.6s forwards;
+  animation: bounceInDown var(--toast-animation-slow) forwards;
 }
 
 .animate-bounceOutUp {
-  animation: bounceOutUp 0.6s forwards;
+  animation: bounceOutUp var(--toast-animation-slow) forwards;
 }
 
-/** Animacion de entrada swingInverted */
 @keyframes swingInverted {
   0% {
-    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Comienza en su posición original */
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg);
   }
   20% {
-    transform: translateY(-5px) rotate3d(0, 0, 1, -5deg); /* Baja ligeramente y se inclina a la derecha */
+    transform: translateY(-5px) rotate3d(0, 0, 1, -5deg);
   }
   40% {
-    transform: translateY(-3px) rotate3d(0, 0, 1, 3deg); /* Sube un poco y se inclina a la izquierda */
+    transform: translateY(-3px) rotate3d(0, 0, 1, 3deg);
   }
   60% {
-    transform: translateY(-2px) rotate3d(0, 0, 1, -2deg); /* Baja un poco y se inclina a la derecha */
+    transform: translateY(-2px) rotate3d(0, 0, 1, -2deg);
   }
   80% {
-    transform: translateY(-1px) rotate3d(0, 0, 1, 1deg); /* Sube ligeramente y se inclina a la izquierda */
+    transform: translateY(-1px) rotate3d(0, 0, 1, 1deg);
   }
   100% {
-    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Finaliza en posición neutral */
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg);
   }
 }
 
-/*** Animacion de salida para swingInverted */
 @keyframes swingOut {
   0% {
-    transform: translateY(0) rotate3d(0, 0, 1, 0deg); /* Comienza en su posición original */
+    transform: translateY(0) rotate3d(0, 0, 1, 0deg);
   }
   20% {
-    transform: translateY(5px) rotate3d(0, 0, 1, 5deg); /* Se inclina a la derecha */
+    transform: translateY(5px) rotate3d(0, 0, 1, 5deg);
   }
   40% {
-    transform: translateY(3px) rotate3d(0, 0, 1, -3deg); /* Se inclina a la izquierda */
+    transform: translateY(3px) rotate3d(0, 0, 1, -3deg);
   }
   60% {
-    transform: translateY(2px) rotate3d(0, 0, 1, 2deg); /* Se inclina a la derecha */
+    transform: translateY(2px) rotate3d(0, 0, 1, 2deg);
   }
   80% {
-    transform: translateY(1px) rotate3d(0, 0, 1, -1deg); /* Se inclina a la izquierda */
+    transform: translateY(1px) rotate3d(0, 0, 1, -1deg);
   }
   100% {
-    transform: translateY(100px) rotate3d(0, 0, 1, 0deg); /* Desplazado hacia abajo y fuera de vista */
-    opacity: 0;
+    transform: translateY(100px) rotate3d(0, 0, 1, 0deg);
+    opacity: var(--toast-opacity-hidden);
   }
 }
 
 .animate-swingInverted {
   transform-origin: top center;
-  animation: swingInverted 0.5s ease-in-out both;
+  animation: swingInverted var(--toast-animation-normal) var(--toast-ease-in-out) both;
 }
 
 .animate-swingOut {
   transform-origin: top center;
-  animation: swingOut 0.5s ease-in-out forwards;
+  animation: swingOut var(--toast-animation-normal) var(--toast-ease-in-out) forwards;
 }
 
-/** Animacion de entrada */
 @keyframes popUp {
   0% {
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
     transform: scale(0.8) translateY(-30%);
   }
   60% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: scale(1.05) translateY(0);
   }
   80% {
     transform: scale(0.95) translateY(0);
   }
   100% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: scale(1) translateY(0);
   }
 }
 
-/** Animacion de salida para popUp */
 @keyframes popUpOut {
   0% {
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
     transform: scale(1) translateY(0);
   }
   20% {
     transform: scale(1.05) translateY(-10%);
   }
   100% {
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
     transform: scale(0.8) translateY(50%);
   }
 }
 
 .animate-popUp {
-  animation: popUp 0.5s forwards;
+  animation: popUp var(--toast-animation-normal) forwards;
 }
 
 .animate-popUpOut {
-  animation: popUpOut 0.5s forwards;
+  animation: popUpOut var(--toast-animation-normal) forwards;
 }
 
 @keyframes TopBounce {
@@ -464,97 +492,81 @@
   53%,
   80% {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   40%,
   43% {
     transform: translate3d(0, -30px, 0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   70% {
     transform: translate3d(0, -15px, 0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   90% {
     transform: translate3d(0, -4px, 0);
-    opacity: 1;
+    opacity: var(--toast-opacity-visible);
   }
   100% {
     transform: translate3d(0, -100px, 0);
-    opacity: 0;
+    opacity: var(--toast-opacity-hidden);
   }
 }
 
 .animate-topBounce {
-  animation: TopBounce 1s ease-out;
-  opacity: 1;
+  animation: TopBounce var(--toast-animation-bounce) var(--toast-ease-out);
+  opacity: var(--toast-opacity-visible);
   pointer-events: auto;
 }
 
 .animate-topBounceOut {
-  animation: TopBounceOut 1s forwards;
+  animation: TopBounceOut var(--toast-animation-bounce) forwards;
   pointer-events: none;
 }
 
-/* Smooth Toast Animations */
 @keyframes slideInUp {
-    0% {
-        transform: translate3d(0, 100%, 0) scale(0.95);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0) scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: translate3d(0, 100%, 0) scale(0.95);
+    opacity: var(--toast-opacity-hidden);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: var(--toast-opacity-visible);
+  }
 }
 
 @keyframes slideOutDown {
-    0% {
-        transform: translate3d(0, 0, 0) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate3d(0, 100%, 0) scale(0.95);
-        opacity: 0;
-    }
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: var(--toast-opacity-visible);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0) scale(0.95);
+    opacity: var(--toast-opacity-hidden);
+  }
 }
 
 .animate-slideInUp {
-    animation: slideInUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: slideInUp var(--toast-animation-medium) var(--toast-ease-bounce);
 }
 
 .animate-slideOutDown {
-    animation: slideOutDown 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation: slideOutDown var(--toast-animation-fast) var(--toast-ease-smooth) forwards;
 }
 
-@media (min-width: 280px) and (max-width: 380px) {
+/* Media Queries Responsivas */
+@media (max-width: 480px) {
   .toast-container {
-    width: 100%;
+    width: 95%;
+    min-width: unset;
   }
-  /* Para todos estos casos tendran la misma posicion */
+
   .toast-container.top-right,
   .toast-container.top-left,
   .toast-container.bottom-left,
   .toast-container.bottom-right {
-    top: 25px;
-    left: 50%;
-    transform: translate(-50%);
-  }
-}
-
-@media (min-width: 381px) and (max-width: 480px) {
-  .toast-container {
-    width: 95%;
-  }
-  /* Para todos estos casos tendran la misma posicion */
-  .toast-container.top-right,
-  .toast-container.top-left,
-  .toast-container.bottom-right,
-  .toast-container.bottom-left {
-    top: 25px;
-    left: 50%;
+    top: var(--toast-position-offset);
+    left: var(--toast-center-position);
     transform: translate(-50%);
   }
 }
