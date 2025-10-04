@@ -1,24 +1,41 @@
-import css from "./styles/nextjs-toast-notify.css?inline";
+import css from "./styles/nextjs-toast-notify.css";
+import chasquidoSound from "./sonidos/chasquido.mp3";
+
+// Inyección automática de CSS para compatibilidad universal (CDN, React, Next.js)
 if (typeof window !== "undefined" && typeof document !== "undefined") {
-  const style = document.createElement("style");
-  style.textContent = css;
-  document.head.appendChild(style);
+  const existingStyle = document.querySelector('style[data-nextjs-toast-notify]');
+  if (!existingStyle) {
+    const style = document.createElement("style");
+    style.setAttribute('data-nextjs-toast-notify', 'true');
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
 }
 
 
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
 /**
- * El sonido que se reproduce cuando se muestra una notificación.
- */
-import chasquidoSound from "./sonidos/chasquido.mp3";
-
-/**
  * Reproduce el sonido especificado.
  */
 const playSound = () => {
-  const audio = new Audio(chasquidoSound);
-  audio.play();
+  try {
+    const audio = new Audio(chasquidoSound);
+    audio.volume = 0.5; // Volumen moderado
+    
+    // Manejar la promesa de play() para evitar errores no capturados
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        // Silenciar el error si el navegador bloquea la reproducción automática
+        console.warn('Audio playback was prevented by browser policy:', error.message);
+      });
+    }
+  } catch (error) {
+    // Manejar errores de creación del objeto Audio
+    console.warn('Could not create or play audio:', error);
+  }
 };
 
 /**
