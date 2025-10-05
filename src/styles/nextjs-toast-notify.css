@@ -20,7 +20,7 @@
   --toast-padding: 8px 15px 8px 8px;
   --toast-border-radius: 6px;
   --toast-icon-size: 30px;
-  --toast-message-margin: 0 20px;
+  --toast-message-margin: 0 20px 0 5px;
   --toast-close-padding: 5px;
   --toast-close-position-top: 10px;
   --toast-close-position-right: 15px;
@@ -555,18 +555,29 @@
 }
 
 /* Media Queries Responsivas */
+/* Media Queries Responsivas */
 @media (max-width: 480px) {
   .toast-container {
     width: 95%;
     min-width: unset;
+    left: var(--toast-center-position) !important;
+      right: auto !important;
+      transform: translateX(-50%);
   }
 
+    /* Top positions - mantienen top */
   .toast-container.top-right,
   .toast-container.top-left,
+    .toast-container.top-center {
+      top: var(--toast-position-offset) !important;
+      bottom: auto !important;
+    }
+  
+    /* Bottom positions - mantienen bottom */
+    .toast-container.bottom-right,
   .toast-container.bottom-left,
-  .toast-container.bottom-right {
-    top: var(--toast-position-offset);
-    left: var(--toast-center-position);
-    transform: translate(-50%);
+    .toast-container.bottom-center {
+      bottom: var(--toast-position-offset) !important;
+      top: auto !important;
   }
 }
