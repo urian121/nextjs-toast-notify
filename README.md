@@ -44,7 +44,7 @@ yarn add nextjs-toast-notify
       showToast.success("¡La operación se realizó con éxito!", {
         duration: 5000,
         progress: true,
-        position: "bottom-center",
+        position: "top-right",
         transition: "bounceIn",
         icon: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>',
         sound: true,
@@ -55,6 +55,26 @@ yarn add nextjs-toast-notify
   }
 
   export default App;
+```
+
+**Para Next.js 13+ (App Router):** Simplemente agrega `"use client"` al inicio de tu componente - ¡y listo! El toast funcionará perfectamente en el cliente.
+
+```jsx
+"use client"; // Esto indica que el componente se renderizará en el cliente
+import { showToast } from "nextjs-toast-notify";
+
+// Componente principal de Next.js
+export default function App() {
+
+  // Manejador de evento para mostrar el toast
+  const handleShowToast = () => {
+      showToast.success("¡La operación se realizó con éxito!");
+    };
+
+  return (
+    <button onClick={handleShowToast}>Mostrar Toast</button>
+  );
+}
 ```
 
 ### 🔥Integrar Next.js Toast Notify en una aplicación de Next.js 🚀
