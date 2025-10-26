@@ -12,7 +12,8 @@ export default [
     output: {
       file: 'dist/nextjs-toast-notify.es.min.js',
       format: 'esm',
-      sourcemap: false
+      sourcemap: false,
+      inlineDynamicImports: true
     },
     plugins: [
       resolve({ browser: true, preferBuiltins: false }),
@@ -58,7 +59,8 @@ export default [
       file: 'dist/nextjs-toast-notify.min.js',
       format: 'umd',
       name: 'NextjsToastNotify',
-      sourcemap: false
+      sourcemap: false,
+      inlineDynamicImports: true
     },
     plugins: [
       resolve({ browser: true, preferBuiltins: false }),

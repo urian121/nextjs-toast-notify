@@ -1,5 +1,4 @@
 import css from "./styles/nextjs-toast-notify.css";
-import chasquidoSound from "./sonidos/chasquido.mp3";
 import { ToastProps, ToastOptions } from "./interfaces/index";
 
 // Inyección automática de CSS
@@ -39,11 +38,28 @@ const ANIMATION_EXIT_MAP = {
   slideInUp: "slideOutDown",
 } as const;
 
-// Reproduce el sonido de notificación
-const playSound = () => {
-  const audio = new Audio(chasquidoSound);
-  audio.volume = 0.5;
-  audio.play().catch(() => {}); // silencio sin logs innecesarios
+// Cache para el audio lazy loading
+let audioCache: HTMLAudioElement | null = null;
+
+// Reproduce el sonido de notificación con lazy loading
+const playSound = async () => {
+  try {
+    // Si ya tenemos el audio en cache, lo usamos
+    if (audioCache) {
+      audioCache.currentTime = 0; // Reinicia el audio
+      audioCache.play().catch(() => {}); // silencio sin logs innecesarios
+      return;
+    }
+
+    // Lazy loading del audio
+    const { default: chasquidoSound } = await import("./sonidos/chasquido.mp3");
+    audioCache = new Audio(chasquidoSound);
+    audioCache.volume = 0.5;
+    audioCache.play().catch(() => {}); // silencio sin logs innecesarios
+  } catch (error) {
+    // Si falla la carga del audio, continuamos sin sonido
+    console.warn("No se pudo cargar el audio de notificación");
+  }
 };
 
 // Obtiene o crea el contenedor de toast para la posición especificada
