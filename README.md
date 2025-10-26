@@ -7,26 +7,24 @@
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
 
-**Nextjs Toast Notify** es el paquete npm moderno, intuitivo, flexible, liviano que transformará cómo manejas las notificaciones en tus aplicaciones web. Diseñado para ofrecer una experiencia de usuario sin interrupciones, **Nextjs Toast Notify** permite agregar alertas emergentes (toasts) con una estética moderna y personalizable.
+🚀 **Nextjs Toast Notify** es la librería definitiva para notificaciones web modernas. Transforma tus alertas aburridas en **toasts elegantes y personalizables** con una sola línea de código.
 
-### ¿Para qué fue creado?
+**¿Qué lo hace especial?**
 
-**Nextjs Toast Notify** nació para hacer que mostrar notificaciones en tus apps web sea **rápido, elegante y sin dolor de cabeza**.  
-Agrega *toasts* modernos y totalmente personalizables con una sola línea de código.
-
-### ¿Qué Necesidad Resuelve?
-
-**Nextjs Toast Notify** responde a la necesidad de mejorar la manera en que los desarrolladores muestran mensajes de notificación al usuario en aplicaciones web, sin interrumpir la interacción actual.
+✨ **Rápido, elegante y sin complicaciones** - Desde instalación hasta implementación en menos de 1 minutos  
+🎨 **Totalmente personalizable** - Controla cada aspecto: posición, animación, duración, iconos y sonidos  
+⚡ **Ultra liviano** - Sin dependencias pesadas, máximo rendimiento  
+🔧 **Plug & Play** - Compatible con React, Next.js, Vanilla JS y cualquier framework moderno
 
 ## Instalación
 Instala **Nextjs Toast Notify** fácilmente con tu gestor de paquetes favorito:
 
 ```bash
-  # Usando npm
-  npm install nextjs-toast-notify --save
+# Usando npm
+npm install nextjs-toast-notify --save
 
-  # O con yarn
-  yarn add nextjs-toast-notify
+# O con yarn
+yarn add nextjs-toast-notify
 ```
 
 ## Casos de uso:
@@ -157,21 +155,42 @@ Aquí tienes un ejemplo de cómo configurarlo:
 La duración por defecto de las notificaciones es de **8 segundos**, pero puedes personalizarla con la opción `duration`.  
 
 - **Propiedad:** `duration`  
-- **Tipo:** `number`  
+- **Tipo:** `number | null`  
 - **Por defecto:** `8000`
 
-**Ejemplo**:
+**Comportamiento de `duration`:**
+- **`number`**: El toast se cierra automáticamente después del tiempo especificado (en milisegundos)
+- **`null`**: El toast usa la duración por defecto (8000ms) para la barra de progreso, pero **NO se cierra automáticamente**. Requiere cierre manual del usuario
+
+**Ejemplo con duración personalizada**:
 
   ```jsx
     import { showToast } from "nextjs-toast-notify";
 
     function App() {
       const handleShowToast = () => {
-        showToast.success("¡Toast de con una duración de 5 segundos!", {
-          duration: 5000, // Duración en milisegundos
+        showToast.success("¡Toast que se cierra en 5 segundos!", {
+          duration: 5000, // Se cierra automáticamente en 5 segundos
         });
       };
-      return <button onClick={handleShowToast}>Mostrar Toast</button>;
+      return <button onClick={handleShowToast}>Toast con auto-cierre</button>;
+    }
+
+    export default App;
+  ```
+
+**Ejemplo con cierre manual**:
+
+  ```jsx
+    import { showToast } from "nextjs-toast-notify";
+
+    function App() {
+      const handleShowPersistentToast = () => {
+        showToast.warning("¡Este toast requiere cierre manual!", {
+          duration: null, // NO se cierra automáticamente
+        });
+      };
+      return <button onClick={handleShowPersistentToast}>Toast persistente</button>;
     }
 
     export default App;
@@ -326,17 +345,6 @@ export default App;
 
 La notificación tiene una **duración de 4 segundos**, está **centrada en la parte superior**, con un efecto de **animación de rebote**, un **ícono personalizado**, **sin barra de progreso** y con **sonido activado**.
 
-## 🚀 Características
-
-- **Integración rápida:** Instálalo con npm o yarn y úsalo en minutos.  
-- **Altamente configurable:** Controla duración, posición, tipo y progreso.  
-- **Animaciones personalizables:** Soporta varios efectos de entrada y salida.  
-- **Múltiples posiciones:** `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`.  
-- **Tipos de notificación:** `success`, `error`, `warning`, `info`.  
-- **Cierre manual o automático** con barra de progreso opcional.  
-- **Configuraciones por defecto** fácilmente modificables.  
-- **Mantenimiento activo** y **licencia MIT**.  
-- **Documentación clara** con ejemplos prácticos.
 
 ## 🤝 Únete y Contribuye
 

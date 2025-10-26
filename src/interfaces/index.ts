@@ -33,10 +33,11 @@ export type ToastType = "success" | "error" | "warning" | "info";
 export interface ToastOptions {
   /** 
    * Duración en milisegundos que se mostrará la notificación.
+   * Si es null, usa el valor por defecto pero no se cierra automáticamente.
    * @default 8000
    * @example 4000
    */
-  duration?: number;
+  duration?: number | null;
 
   /** 
    * Muestra una barra de progreso.

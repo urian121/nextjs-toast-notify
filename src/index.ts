@@ -106,8 +106,11 @@ const createToast = (props: ToastProps, options: ToastOptions = {}): void => {
   const container = getToastContainer(position);
   const toast = document.createElement("div");
   
+  // Determinar la duración efectiva para la barra de progreso
+  const effectiveDuration = duration === null ? 8000 : duration;
+  
   toast.className = `toast-nextjs ${type} animate-${transition}`;
-  toast.style.setProperty("--progress-duration", `${duration}ms`);
+  toast.style.setProperty("--progress-duration", `${effectiveDuration}ms`);
 
   const toastIcon = icon || TOAST_ICONS[type];
   const backgroundColor = TOAST_COLORS[type];
@@ -140,7 +143,11 @@ const createToast = (props: ToastProps, options: ToastOptions = {}): void => {
 
   // Event listeners
   toast.querySelector(".close-toast")?.addEventListener("click", () => closeToast(toast));
-  setTimeout(() => closeToast(toast), duration);
+  
+  // Solo configurar auto-close si duration no es null
+  if (duration !== null) {
+    setTimeout(() => closeToast(toast), effectiveDuration);
+  }
 };
 
 // Métodos de toast por tipo
