@@ -30,7 +30,7 @@
   "homepage": "https://www.nextjstoastnotify.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/urian121/nextjs-toast-notify"
+    "url": "git+https://github.com/urian121/nextjs-toast-notify.git"
   },
   "keywords": [
     "nextjs-toast-notify",
