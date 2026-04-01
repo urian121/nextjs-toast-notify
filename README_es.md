@@ -7,10 +7,8 @@
 ![demo](https://raw.githubusercontent.com/urian121/imagenes-proyectos-github/master/nextjs-toast-notify.gif)
 👉 [Ver Código en GitHub](https://github.com/urian121/nextjs-toast-notify-con-reactjs)
 
-
-> 📖 **¿Hablas español?** La documentación también está disponible en español:
-> [README en Español](./README_es.md)
-
+> 📖 **Do you speak English?** This documentation is also available in English:
+> [README in English](./README.md)
 
 🚀 **Nextjs Toast Notify** es la librería definitiva para notificaciones web modernas. Transforma tus alertas aburridas en **toasts elegantes y personalizables** con una sola línea de código.
 
