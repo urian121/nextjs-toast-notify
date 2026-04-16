@@ -9,7 +9,7 @@
   
   /* Colors */
   --toast-bg-color: #fff;
-  --toast-text-color: #666666;
+  --toast-text-color: #504f4f;
   --toast-close-color: #222;
   --toast-success-color: #4caf50;
   --toast-error-color: #f44336;
@@ -27,8 +27,8 @@
   --toast-progress-height: 4px;
   
   /* Typography */
-  --toast-font-size: 17px;
-  --toast-font-weight: 400;
+  /*--toast-font-size: 17px;
+    --toast-font-weight: 400;*/
   --toast-icon-font-size: 20px;
   
   /* Shadows & Effects */
@@ -134,8 +134,6 @@
 }
 
 .message .text {
-  font-size: var(--toast-font-size);
-  font-weight: var(--toast-font-weight);
   text-align: center;
   color: var(--toast-text-color);
   line-height: normal;
